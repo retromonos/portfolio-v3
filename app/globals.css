@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+/* lime300 = #bbf451 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -27,7 +27,7 @@ body {
 }
 
 .test {
-  background: rgb(214, 255, 108);
+  background: rgb(91, 53, 97);
   background-image: radial-gradient(rgb(154, 191, 94) 1.25px, transparent 0);
   background-size: 20px 20px;
   background-position: 1px 0px;
@@ -43,17 +43,17 @@ body {
 @font-face {
   font-family: "Interference"; /* set name */
   font-weight: lighter;
-  src: url(fonts/KHInterferenceTRIAL-Light.woff); /* url of the font */
+  src: url(/fonts/KHInterferenceTRIAL-Light.woff); /* url of the font */
 }
 
 @font-face {
   font-family: "Interference"; /* set name */
   font-weight: normal;
-  src: url(fonts/KHInterferenceTRIAL-Regular.woff); /* url of the font */
+  src: url(/fonts/KHInterferenceTRIAL-Regular.woff); /* url of the font */
 }
 
 @font-face {
   font-family: "Interference"; /* set name */
   font-weight: bold;
-  src: url(fonts/KHInterferenceTRIAL-Bold.woff); /* url of the font */
+  src: url(/fonts/KHInterferenceTRIAL-Bold.woff); /* url of the font */
 }
