@@ -5,12 +5,24 @@ export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center test">
       <main className="shadow-md flex text-black min-h-screen w-full max-w-3xl flex-col bg-white">
-        <Image src={"/distinct.webp"} alt={"key"} width={3840} height={2160}/>
-        <Marquee autoFill={true} className="h-8 w-full bg-black font-interference text-lime-300 p-2">
-          ASSERT//A RUNNER IS A BIOSYNTHETIC SHELL::::
+        <div className="relative">
+          <Image src={"/distinct-1.webp"} alt={"key"} width={3840} height={2160}/>
+          <div className="absolute w-full h-full hero-overlay top-0"></div>
+          <div className="absolute h-108 w-36 top-0 font-bold">
+            <div className="absolute top-4 left-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference">
+            ~LUKE.....
+          </div>
+          <div className="absolute bottom-4 right-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference">
+            ....CULLEN~
+          </div>
+          </div>
+          
+        </div>
+        <Marquee autoFill={true} className="h-8 w-full bg-black font-interference tracking-wider text-lime-300 p-2">
+          ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
         </Marquee>
-        <section className="p-8 font-interference font-normal text-4xl tracking-tight">
-          Luke Cullen
+        <section className="p-8 font-interference font-normal text-6xl tracking-tight">
+          HELLO!
         </section>
       </main>
     </div>
