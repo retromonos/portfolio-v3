@@ -21,9 +21,17 @@ export default function Home() {
         <Marquee autoFill={true} className="h-8 w-full bg-black font-interference tracking-wider text-lime-300 p-2">
           ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
         </Marquee>
-        <section className="p-8 font-interference font-normal text-6xl tracking-tight">
-          HELLO!
-        </section>
+        <div className="p-8 gap-4 flex flex-col">
+          <section className="font-interference font-normal text-6xl tracking-tight">
+            HELLO!
+          </section>
+          <section className="font-mono font-normal text-xl tracking-tight">
+            I'm <b>Luke Cullen</b>, a Computer Science Major at the University of Central Florida, minoring in Data Science.
+          </section>
+          <section className="font-mono font-normal text-xl tracking-tight">
+            I'm currently a Web Developer Intern at the CDL Techrangers, as well as a Hackathon Organizer for UCF's premier SWE club, Knight Hacks.
+          </section>
+        </div>
       </main>
     </div>
   );
