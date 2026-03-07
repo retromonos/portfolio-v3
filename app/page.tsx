@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-center test">
       <main
-        className="relative pb-32 shadow-md flex text-black min-h-screen w-full max-w-4xl
-        flex-col bg-white"
+        className="relative pb-32 flex text-black min-h-screen w-full max-w-4xl
+        flex-col bg-transparent"
       >
         <div className="fixed bg-neutral-800 right-0 sm:right-auto p-2 max-w-40 sm:max-w-4xl w-fit self-end top-0 flex flex-col sm:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
           <Image
@@ -125,43 +125,49 @@ export default function Home() {
         >
           ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
         </Marquee>
-        <div className="p-8 gap-10 flex flex-col">
-          <BlockHeader sideNum="01" className="">
-            Hello!
-          </BlockHeader>
-          <section className="font-mono font-normal text-lg/8.5 tracking-tight">
-            <p className="">
-              I&apos;m <span className="font-interference">Luke Cullen</span>, a
-              Computer Science Major at the University of Central Florida,
-              minoring in Data Science. I&apos;m currently a Web Developer
-              Intern at the CDL Techrangers, as well as a Hackathon Organizer
-              for UCF&apos;s premier SWE club, Knight Hacks.
+        <div className="gap-12 flex flex-col">
+          <section className="mt-12 flex flex-col gap-10 p-8 bg-white card-shadow">
+            <BlockHeader sideNum="01" className="">
+              Hello!
+            </BlockHeader>
+            <section className="font-mono font-normal text-lg/8.5 tracking-tight">
+              <p className="">
+                I&apos;m <span className="font-interference">Luke Cullen</span>,
+                a Computer Science Major at the University of Central Florida,
+                minoring in Data Science. I&apos;m currently a Web Developer
+                Intern at the CDL Techrangers, as well as a Hackathon Organizer
+                for UCF&apos;s premier SWE club, Knight Hacks.
+              </p>
+              <br />
+              <p className="">
+                Professionally, my primary goal is to end up somewhere where I
+                can make a difference in the world. I love the problem-solving
+                tools that my career as a Software Engineer provides me with,
+                and I’m always looking for more ways to use them. I hope that my
+                current experience and projects help convey that this is where
+                my passion lies.
+              </p>
+            </section>
+          </section>
+          <section className="flex flex-col gap-10 p-8 card-shadow bg-white">
+            <BlockHeader id="experience" sideNum="02" className="mb-4">
+              Experience
+            </BlockHeader>
+            <p className="font-mono font-normal text-lg tracking-tight">
+              I&apos;m <b>Luke Cullen</b>, a Computer Science Major at the
+              University of Central Florida, minoring in Data Science.
             </p>
-            <br />
-            <p className="">
-              Professionally, my primary goal is to end up somewhere where I can
-              make a difference in the world. I love the problem-solving tools
-              that my career as a Software Engineer provides me with, and I’m
-              always looking for more ways to use them. I hope that my current
-              experience and projects help convey that this is where my passion
-              lies.
+            <p className="font-mono font-normal text-lg tracking-tight">
+              I&apos;m currently a Web Developer Intern at the CDL Techrangers,
+              as well as a Hackathon Organizer for UCF&apos;s premier SWE club,
+              Knight Hacks.
             </p>
           </section>
-          <BlockHeader id="experience" sideNum="02" className="mb-4">
-            Experience
-          </BlockHeader>
-          <p className="font-mono font-normal text-lg tracking-tight">
-            I&apos;m <b>Luke Cullen</b>, a Computer Science Major at the
-            University of Central Florida, minoring in Data Science.
-          </p>
-          <p className="font-mono font-normal text-lg tracking-tight">
-            I&apos;m currently a Web Developer Intern at the CDL Techrangers, as
-            well as a Hackathon Organizer for UCF&apos;s premier SWE club,
-            Knight Hacks.
-          </p>
-          <BlockHeader id="projects" sideNum="03" className="">
-            Projects
-          </BlockHeader>
+          <section className="flex flex-col gap-10 p-8 card-shadow bg-white">
+            <BlockHeader id="projects" sideNum="03" className="">
+              Projects
+            </BlockHeader>
+          </section>
         </div>
       </main>
       <footer className="w-full bg-neutral-700 flex items-center justify-center relative">
