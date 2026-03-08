@@ -30,6 +30,14 @@ body {
     box-shadow: -20px 16px 0px #63208b;
 }
 
+.t-card-shadow {
+    box-shadow: -12px 10px 0px #66a336;
+}
+
+.sm-card-shadow {
+    box-shadow: -12px 10px 0px #222222;
+}
+
 .test {
     background: rgb(171, 222, 88);
     background-image: radial-gradient(rgb(134, 168, 78) 1.25px, transparent 0);

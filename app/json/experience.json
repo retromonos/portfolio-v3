@@ -1,0 +1,94 @@
+{
+  "jobs": [
+    {
+      "name": "CDL Techrangers",
+      "title": "Web Developer Intern",
+      "rarity": "Exotic",
+      "description": "Currently developing web software as a part of the CDL Techrangers, a team inside UCF which develops open-source educational software used by 100+ institutions and tens of thousands of students worldwide.",
+      "time": "10/25 - Present",
+      "links": ["https://techrangers.cdl.ucf.edu/"],
+      "location": "Orlando, FL",
+      "logo": "techrangers.webp",
+      "bullets": [
+        "Deployed an open-source Flask tool for processing quiz accessibility requests on AWS EC2 servers, after rewriting 41 unit tests and refactoring the app to use Docker, as well as the latest LTI 1.3 standard, resolving over a dozen open GitHub issues.",
+        "QA tested and rewrote numerous widget components from PhP to Django in a team-wide port of our flagship product, Materia, which offers 25+ educational widgets to gamify and enhance a student’s learning experience.",
+        "Developing methods and marketing pitches to increase adoption of our tools across the University."
+      ],
+      "skills": [
+        "Teamwork",
+        "Initiative",
+        "Marketing",
+        "Client Relations",
+        "Idea Development",
+        "Adaptability"
+      ]
+    },
+    {
+      "name": "Knight Hacks",
+      "title": "Hackathon Organizer, Developer",
+      "rarity": "Legendary",
+      "description": "Knight Hacks is a UCF RSO for software development, with the goal of empowering students to improve their technical skills and gain real experience. I helped organize the most recent hackathon, Knight Hacks VIII, which attained 900+ participants and 90% positive ratings. I also currently work as a part of our development team, resposible for our member/hacker management infrastructure, Blade, which achieved a peak of about 850 concurrent users during the event.",
+      "time": "7/25 - Present",
+      "links": ["https://club.knighthacks.org/"],
+      "location": "Orlando, FL",
+      "logo": "knighthacks.jpg",
+      "bullets": [
+        "Authored attendance tracking systems and an accompanying management interface in React and tRPC/Node, storing valuable metrics for 60 workshop/sponsor events and 6,400+ check-in instances throughout the weekend while implementing rapid hot-fixes.",
+        "Designed new interfaces for hacker-facing dashboards and leaderboards to drive engagement, as well as enhancing the staff-side check-in interface to allow high volumes of check-ins.",
+        "Crafted React Email templates seen by 1,000+ applicants, communicating acceptance status in manner respectful to users."
+      ],
+      "skills": [
+        "Leadership",
+        "Fundraising",
+        "Event Planning",
+        "Logistics",
+        "Teamwork",
+        "Budgeting"
+      ]
+    },
+    {
+      "name": "DenTraceX",
+      "title": "Lead Developer, Vice President",
+      "rarity": "Rare",
+      "description": "DenTraceX is a Florida non-profit organization dedicated to collecting dental records of missing persons, in order to cross-reference them with unidentified remains. My main role as Lead Developer is the implementation of the entire organization's tech stack, such as our database, security, and client-facing webpages. While we are not active yet, we are targeting a launch by September 2025.",
+      "time": "5/25 - Present",
+      "links": ["https://www.instagram.com/dentracex/"],
+      "location": "Orlando, FL",
+      "logo": "dentracex.jpg",
+      "bullets": [
+        "Co-founded a non-profit organization dedicated to collecting dental records of missing persons, in order to cross-reference them with unidentified remains.",
+        "Authored our organization infrastructure entirely from scratch using React, ExpressJS/Node, PostgreSQL, as well as our own self-hosted AWS-compatible S3 bucket storage solution.",
+        "Constructed a novel code-based representation for jaw/tooth records, allowing easy searching/filtering to identify real-world human remains, intended for use by medical examiners and independent investigators.",
+        "Working with a team of diverse disciplines to process and handle sensitive medical information and maintain legal compliance."
+      ],
+      "skills": [
+        "Project Management",
+        "Teamwork",
+        "Corporation Development",
+        "Web Development",
+        "Server Management"
+      ]
+    },
+    {
+      "name": "Publix Super Markets",
+      "title": "Cashier",
+      "rarity": "Uncommon",
+      "description": "Working as a Cashier, I interact with hundreds of customers a day, making sure that their needs are met and that they are truly happy to shop at Publix. As my first job, it's where I built much of my soft skills and self-accountability.",
+      "time": "2/23 - Present",
+      "links": ["https://corporate.publix.com/"],
+      "location": "Orlando, FL",
+      "logo": "Publix_Retail_Logo.png",
+      "bullets": [
+        "Processing customer transactions efficiently while providing great service.",
+        "Able to adapt easily to changes in working condition/customer inflow.",
+        "Working as a team to ensure the completion of all daily tasks while keeping store operations running smoothly."
+      ],
+      "skills": [
+        "Customer Service",
+        "Conflict Resolution",
+        "Adaptability",
+        "Teamwork"
+      ]
+    }
+  ]
+}

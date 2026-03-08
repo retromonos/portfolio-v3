@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import BlockHeader from "./components/header";
+import { projects } from "./json/projects.json";
+import { jobs } from "./json/experience.json";
 
 export default function Home() {
   return (
@@ -9,7 +11,7 @@ export default function Home() {
         className="relative pb-32 flex text-black min-h-screen w-full max-w-4xl
         flex-col bg-transparent"
       >
-        <div className="fixed bg-neutral-800 right-0 sm:right-auto p-2 max-w-40 sm:max-w-4xl w-fit self-end top-0 flex flex-col sm:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
+        <div className="fixed bg-neutral-800 t-card-shadow right-0 sm:right-auto -mr-8 p-3 max-w-40 sm:max-w-4xl w-fit self-end top-4 flex flex-col sm:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
           <Image
             alt="Logo"
             src={"/logotype.png"}
@@ -40,7 +42,7 @@ export default function Home() {
         <Marquee
           autoFill={true}
           direction="right"
-          className="h-8 z-20 w-full bg-neutral-800 font-interference tracking-wider text-yellow-300 p-2"
+          className="h-8 z-20 w-full bg-neutral-800 font-mono tracking-wider text-yellow-300 p-2"
         >
           !!!UNDER_CONSTRUCTION!!!...
         </Marquee>
@@ -121,12 +123,12 @@ export default function Home() {
         </section>
         <Marquee
           autoFill={true}
-          className="h-8 w-full bg-neutral-700 font-interference tracking-wider text-white p-2"
+          className="h-8 w-full bg-neutral-700 font-mono tracking-wider text-white p-2"
         >
           ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
         </Marquee>
-        <div className="gap-12 flex flex-col">
-          <section className="mt-12 flex flex-col gap-10 p-8 bg-white card-shadow">
+        <div className="gap-12 flex flex-col relative">
+          <section className="mt-12 flex flex-col gap-10 p-8 py-6 bg-white card-shadow">
             <BlockHeader sideNum="01" className="">
               Hello!
             </BlockHeader>
@@ -149,29 +151,74 @@ export default function Home() {
               </p>
             </section>
           </section>
-          <section className="flex flex-col gap-10 p-8 card-shadow bg-white">
-            <BlockHeader id="experience" sideNum="02" className="mb-4">
+          <section className="flex flex-col gap-10 p-8 py-6 w-full sticky -top-3 z-20 card-shadow bg-white">
+            <BlockHeader id="experience" sideNum="02" className="">
               Experience
             </BlockHeader>
-            <p className="font-mono font-normal text-lg tracking-tight">
-              I&apos;m <b>Luke Cullen</b>, a Computer Science Major at the
-              University of Central Florida, minoring in Data Science.
-            </p>
-            <p className="font-mono font-normal text-lg tracking-tight">
-              I&apos;m currently a Web Developer Intern at the CDL Techrangers,
-              as well as a Hackathon Organizer for UCF&apos;s premier SWE club,
-              Knight Hacks.
-            </p>
           </section>
-          <section className="flex flex-col gap-10 p-8 card-shadow bg-white">
+          {jobs.map((v, i) => {
+            return (
+              <div
+                key={"projects" + i}
+                className={`flex flex-col mt-8 ${i % 2 == 0 ? "self-end" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-lime-950 sm-card-shadow font-mono text-white`}
+              >
+                <div
+                  className={`absolute ${i % 2 >= 0 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
+                >
+                  <div
+                    className={` bg-lime-700 w-fit font-interference py-2.5 p-4 ${i % 2 >= 0 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-lime-600  text-2xl`}
+                  >
+                    {v.name.toUpperCase()}
+                  </div>
+                  <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
+                </div>
+                <Marquee className="bg-lime-800" autoFill={true}>
+                  <div aria-label={"Skills: " + v.skills.join(",")}>
+                    {v.skills.join("...").toUpperCase() + "..."}
+                  </div>
+                </Marquee>
+                <div className="p-4 w-full">{v.description}</div>
+              </div>
+            );
+          })}
+          <section className="flex flex-col gap-10 p-8 py-6 sticky -top-3 z-20 card-shadow bg-white">
             <BlockHeader id="projects" sideNum="03" className="">
               Projects
             </BlockHeader>
           </section>
+          {projects.map((v, i) => {
+            return (
+              <div
+                key={"projects" + i}
+                className={`flex flex-col mt-8 ${i % 2 == 0 ? "self-end" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-blue-950 sm-card-shadow font-mono text-white`}
+              >
+                <div
+                  className={`absolute ${i % 2 >= 0 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
+                >
+                  <div
+                    className={` bg-purple-700 w-fit font-interference py-2.5 p-4 ${i % 2 >= 0 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-purple-600  text-2xl`}
+                  >
+                    {v.name.toUpperCase()}
+                  </div>
+                  <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
+                </div>
+                <Marquee
+                  className="bg-purple-800"
+                  direction={i % 2 == 0 ? "right" : "left"}
+                  autoFill={true}
+                >
+                  <div aria-label={"Skills: " + v.tools.join(",")}>
+                    {v.tools.join("...").toUpperCase() + "..."}
+                  </div>
+                </Marquee>
+                <div className="p-4 w-full">{v.description}</div>
+              </div>
+            );
+          })}
         </div>
       </main>
       <footer className="w-full bg-neutral-700 flex items-center justify-center relative">
-        <div className="w-5xl h-40 py-8 font-interference">Test</div>
+        <div className="w-5xl h-64 py-8 font-interference">Test</div>
         <div className="absolute footer-overlay w-full h-full pointer-events-none" />
       </footer>
     </div>
