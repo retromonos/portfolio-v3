@@ -3,6 +3,23 @@ import Marquee from "react-fast-marquee";
 import BlockHeader from "./components/header";
 import { projects } from "./json/projects.json";
 import { jobs } from "./json/experience.json";
+import {
+  FileText,
+  GithubIcon,
+  Globe,
+  ImageIcon,
+  LinkedinIcon,
+  Mail,
+  Map,
+} from "lucide-react";
+import GalleryModal from "./components/gallerymodal";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
   return (
@@ -11,7 +28,7 @@ export default function Home() {
         className="relative pb-32 flex text-black min-h-screen w-full max-w-4xl
         flex-col bg-transparent"
       >
-        <div className="fixed bg-neutral-800 t-card-shadow right-0 sm:right-auto -mr-8 p-3 max-w-40 sm:max-w-4xl w-fit self-end top-4 flex flex-col sm:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
+        <div className="fixed bg-neutral-800 t3-card-shadow right-0 sm:right-auto -mr-8 p-3 max-w-40 sm:max-w-4xl w-fit self-end top-4 flex flex-col sm:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
           <Image
             alt="Logo"
             src={"/logotype.png"}
@@ -132,10 +149,10 @@ export default function Home() {
             <BlockHeader sideNum="01" className="">
               Hello!
             </BlockHeader>
-            <section className="font-mono font-normal text-lg/8.5 tracking-tight">
+            <section className="font-shapiro font-normal text-lg/7 tracking-normal">
               <p className="">
-                I&apos;m <span className="font-interference">Luke Cullen</span>,
-                a Computer Science Major at the University of Central Florida,
+                I&apos;m <span className="font-bold">Luke Cullen</span>, a
+                Computer Science Major at the University of Central Florida,
                 minoring in Data Science. I&apos;m currently a Web Developer
                 Intern at the CDL Techrangers, as well as a Hackathon Organizer
                 for UCF&apos;s premier SWE club, Knight Hacks.
@@ -159,29 +176,70 @@ export default function Home() {
           {jobs.map((v, i) => {
             return (
               <div
-                key={"projects" + i}
-                className={`flex flex-col mt-8 ${i % 2 == 0 ? "self-end" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-lime-950 sm-card-shadow font-mono text-white`}
+                key={"jobs" + i}
+                className={`flex ${i % 2 == 0 ? "flex-row-reverse" : "flex-row"} gap-8 w-full`}
               >
-                <div
-                  className={`absolute ${i % 2 >= 0 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
-                >
-                  <div
-                    className={` bg-lime-700 w-fit font-interference py-2.5 p-4 ${i % 2 >= 0 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-lime-600  text-2xl`}
+                <div className="flex flex-col gap-4 mt-0">
+                  <Image
+                    alt={v.title + " logo"}
+                    src={v.logo}
+                    width={196}
+                    height={196}
+                    className="t2-card-shadow hover:scale-103 duration-100 border-purple-800"
+                  />
+                  <div className="w-full h-fit bg-purple-800 text-white hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center">
+                    {v.time}
+                  </div>
+                  <div className="flex flex-row justify-center hover:scale-103 duration-100 gap-2 w-full h-fit bg-purple-800 text-white p-2 sm-card-shadow font-interference text-center">
+                    <Map className="size-6 my-auto" />
+                    {v.location}
+                  </div>
+                  <a
+                    href={v.links[0]}
+                    className="relative flex flex-row justify-center gap-2 w-full h-fit underline-offset-4 border-4 border-purple-800 text-white bg-purple-950 hover:bg-purple-900 hover:underline hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center"
                   >
-                    {v.name.toUpperCase()}
-                  </div>
-                  <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
+                    <div className="absolute button-overlay w-full h-full top-0" />
+                    <Globe className="size-6 my-auto" />
+                    Learn More
+                  </a>
                 </div>
-                <Marquee className="bg-lime-800" autoFill={true}>
-                  <div aria-label={"Skills: " + v.skills.join(",")}>
-                    {v.skills.join("...").toUpperCase() + "..."}
+                <div className="flex flex-col gap-4 mt-8">
+                  <div
+                    className={`flex flex-col ${i % 2 == 0 ? "self-start" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-lime-950 sm-card-shadow font-mono text-white`}
+                  >
+                    <div
+                      className={`absolute ${i % 2 == 1 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
+                    >
+                      <div
+                        className={` bg-lime-700 w-fit font-interference py-2.5 p-4 ${i % 2 == 1 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-lime-600  text-2xl`}
+                      >
+                        {v.name.toUpperCase()}
+                      </div>
+                      <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
+                    </div>
+                    <Marquee
+                      className="bg-lime-800"
+                      direction={i % 2 == 0 ? "right" : "left"}
+                      autoFill={true}
+                    >
+                      <div aria-label={"Skills: " + v.skills.join(",")}>
+                        {v.skills.join("...").toUpperCase() + "..."}
+                      </div>
+                    </Marquee>
+                    <div className="p-4 w-full text-base flex flex-col gap-2">
+                      <div className="font-interference text-xl border-b-lime-800 border-b-2 w-fit pb-1">
+                        {v.title}
+                      </div>
+                      <div className="font-shapiro font-normal tracking-normal">
+                        {v.description}
+                      </div>
+                    </div>
                   </div>
-                </Marquee>
-                <div className="p-4 w-full">{v.description}</div>
+                </div>
               </div>
             );
           })}
-          <section className="flex flex-col gap-10 p-8 py-6 sticky -top-3 z-20 card-shadow bg-white">
+          <section className="flex flex-col gap-10 p-8 w-full py-6 sticky -top-3 z-20 card-shadow bg-white">
             <BlockHeader id="projects" sideNum="03" className="">
               Projects
             </BlockHeader>
@@ -190,35 +248,161 @@ export default function Home() {
             return (
               <div
                 key={"projects" + i}
-                className={`flex flex-col mt-8 ${i % 2 == 0 ? "self-end" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-blue-950 sm-card-shadow font-mono text-white`}
+                className={`flex ${i % 2 == 0 ? "flex-row-reverse" : "flex-row"} gap-8 w-full`}
               >
-                <div
-                  className={`absolute ${i % 2 >= 0 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
-                >
-                  <div
-                    className={` bg-purple-700 w-fit font-interference py-2.5 p-4 ${i % 2 >= 0 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-purple-600  text-2xl`}
+                <div className="flex flex-col gap-4 mt-8">
+                  <Image
+                    src={v.images[0]}
+                    width={196}
+                    height={196}
+                    alt={v.name + " logo"}
+                    className="bg-black t-card-shadow hover:scale-103 duration-100 border-lime-800"
+                  />
+                  <div className="w-full h-fit bg-lime-800 text-white hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center">
+                    {v.time}
+                  </div>
+                  <a
+                    href={v.link}
+                    className="relative flex flex-row justify-center gap-2 w-full h-fit underline-offset-4 border-4 border-lime-800 text-white bg-lime-950 hover:bg-lime-900 hover:underline hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center"
                   >
-                    {v.name.toUpperCase()}
-                  </div>
-                  <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
+                    <div className="absolute button-overlay w-full h-full top-0" />
+                    <Globe className="size-6 my-auto" />
+                    Learn More
+                  </a>
                 </div>
-                <Marquee
-                  className="bg-purple-800"
-                  direction={i % 2 == 0 ? "right" : "left"}
-                  autoFill={true}
-                >
-                  <div aria-label={"Skills: " + v.tools.join(",")}>
-                    {v.tools.join("...").toUpperCase() + "..."}
+                <div className="flex flex-col gap-4 mt-8">
+                  <div
+                    className={`flex flex-col mt-8 ${i % 2 == 0 ? "self-start" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-blue-950 sm-card-shadow font-mono text-white`}
+                  >
+                    <div
+                      className={`absolute ${i % 2 == 1 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
+                    >
+                      <div
+                        className={` bg-purple-700 w-fit font-interference py-2.5 p-4 ${i % 2 == 1 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-purple-600  text-2xl`}
+                      >
+                        {v.name.toUpperCase()}
+                      </div>
+                      <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
+                    </div>
+                    <Marquee
+                      className="bg-purple-800"
+                      direction={i % 2 == 0 ? "right" : "left"}
+                      autoFill={true}
+                    >
+                      <div aria-label={"Skills: " + v.tools.join(",")}>
+                        {v.tools.join("...").toUpperCase() + "..."}
+                      </div>
+                    </Marquee>
+                    <div className="p-4 w-full text-base flex flex-col gap-2">
+                      <div className="font-interference text-xl border-b-purple-800 border-b-2 w-fit pb-1">
+                        {v.role}
+                      </div>
+                      <div className="font-shapiro font-normal tracking-normal">
+                        {v.description}
+                      </div>
+                    </div>
                   </div>
-                </Marquee>
-                <div className="p-4 w-full">{v.description}</div>
+                  <div>
+                    <GalleryModal title={v.name}>
+                      <div className="h-full flex flex-col justify-between">
+                        <Marquee
+                          className="bg-purple-800 font-mono"
+                          direction={"right"}
+                          autoFill={true}
+                        >
+                          <div aria-label={"Skills: " + v.tools.join(",")}>
+                            {v.tools.join("...").toUpperCase() + "..."}
+                          </div>
+                        </Marquee>
+                        <div className="flex flex-col w-full h-full relative overflow-scroll pb-8">
+                          <div className="mt-10 relative">
+                            <div className="absolute top-0 left-0 w-full h-90 button-overlay" />
+                            <Carousel className="h-84 flex w-[80%] mt-2 mx-auto relative">
+                              <CarouselContent className="flex my-auto h-full">
+                                {v.images.map((img, j) => {
+                                  if (j == 0) return;
+
+                                  return (
+                                    <CarouselItem
+                                      className="h-full flex"
+                                      key={`pi${i}_${j}`}
+                                    >
+                                      <img
+                                        src={img}
+                                        className="h-80 m-auto xs2-card-shadow"
+                                      />
+                                    </CarouselItem>
+                                  );
+                                })}
+                              </CarouselContent>
+                              <CarouselPrevious className="rounded-none bg-purple-800 xs2-card-shadow cursor-pointer p-4 border-purple-700 border-0 border-l-8 hover:bg-purple-700 hover:border-purple-600 hover:text-white" />
+                              <CarouselNext className="rounded-none bg-purple-800 xs2-card-shadow cursor-pointer p-4 border-purple-700 border-0 border-r-8 hover:bg-purple-700 hover:border-purple-600 hover:text-white" />
+                            </Carousel>
+                          </div>
+                          <div className="mt-8 flex flex-col p-4 px-6 gap-2 font-shapiro">
+                            <div className="font-interference text-xl border-b-purple-800 border-b-2 w-fit pb-1">
+                              {v.role}
+                            </div>
+                            {v.description}
+                          </div>
+                        </div>
+
+                        <Marquee
+                          className="bg-purple-800 font-mono"
+                          direction={"left"}
+                          autoFill={true}
+                        >
+                          <div aria-label={"Skills: " + v.tools.join(",")}>
+                            {v.tools.join("...").toUpperCase() + "..."}
+                          </div>
+                        </Marquee>
+                      </div>
+                    </GalleryModal>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
       </main>
-      <footer className="w-full bg-neutral-700 flex items-center justify-center relative">
-        <div className="w-5xl h-64 py-8 font-interference">Test</div>
+      <footer className="w-full bg-neutral-700 flex items-center justify-center relative text-white">
+        <div className="w-5xl py-8 pb-16 font-interference flex flex-col gap-4">
+          <div className="text-2xl">LUKE CULLEN</div>
+          <div className="text-sm font-mono flex flex-row w-full gap-4">
+            <a
+              className="hover:underline flex flex-row w-fit gap-2"
+              target="_blank"
+              href="mailto:lukeculleninc@gmail.com"
+            >
+              <Mail />
+              <div className="my-auto">lukeculleninc@gmail.com</div>
+            </a>
+            <a
+              className="hover:underline flex flex-row w-fit gap-2"
+              target="_blank"
+              href="https://github.com/retromonos/"
+            >
+              <GithubIcon />
+              <div className="my-auto">GitHub</div>
+            </a>
+            <a
+              className="hover:underline flex flex-row w-fit gap-2"
+              target="_blank"
+              href="https://www.linkedin.com/in/luke-cullen-319701305/"
+            >
+              <LinkedinIcon />
+              <div className="my-auto">LinkedIn</div>
+            </a>
+            <a
+              className="hover:underline flex flex-row w-fit gap-2"
+              target="_blank"
+              href="/LukeCullen_Resume2_26.pdf"
+            >
+              <FileText />
+              <div className="my-auto">Resume</div>
+            </a>
+          </div>
+        </div>
         <div className="absolute footer-overlay w-full h-full pointer-events-none" />
       </footer>
     </div>

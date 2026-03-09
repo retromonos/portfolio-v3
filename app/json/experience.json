@@ -8,7 +8,7 @@
       "time": "10/25 - Present",
       "links": ["https://techrangers.cdl.ucf.edu/"],
       "location": "Orlando, FL",
-      "logo": "techrangers.webp",
+      "logo": "/jobs/techrangers.webp",
       "bullets": [
         "Deployed an open-source Flask tool for processing quiz accessibility requests on AWS EC2 servers, after rewriting 41 unit tests and refactoring the app to use Docker, as well as the latest LTI 1.3 standard, resolving over a dozen open GitHub issues.",
         "QA tested and rewrote numerous widget components from PhP to Django in a team-wide port of our flagship product, Materia, which offers 25+ educational widgets to gamify and enhance a student’s learning experience.",
@@ -31,7 +31,7 @@
       "time": "7/25 - Present",
       "links": ["https://club.knighthacks.org/"],
       "location": "Orlando, FL",
-      "logo": "knighthacks.jpg",
+      "logo": "/jobs/knighthacks.jpg",
       "bullets": [
         "Authored attendance tracking systems and an accompanying management interface in React and tRPC/Node, storing valuable metrics for 60 workshop/sponsor events and 6,400+ check-in instances throughout the weekend while implementing rapid hot-fixes.",
         "Designed new interfaces for hacker-facing dashboards and leaderboards to drive engagement, as well as enhancing the staff-side check-in interface to allow high volumes of check-ins.",
@@ -54,7 +54,7 @@
       "time": "5/25 - Present",
       "links": ["https://www.instagram.com/dentracex/"],
       "location": "Orlando, FL",
-      "logo": "dentracex.jpg",
+      "logo": "/jobs/dentracex.jpg",
       "bullets": [
         "Co-founded a non-profit organization dedicated to collecting dental records of missing persons, in order to cross-reference them with unidentified remains.",
         "Authored our organization infrastructure entirely from scratch using React, ExpressJS/Node, PostgreSQL, as well as our own self-hosted AWS-compatible S3 bucket storage solution.",
@@ -74,10 +74,10 @@
       "title": "Cashier",
       "rarity": "Uncommon",
       "description": "Working as a Cashier, I interact with hundreds of customers a day, making sure that their needs are met and that they are truly happy to shop at Publix. As my first job, it's where I built much of my soft skills and self-accountability.",
-      "time": "2/23 - Present",
+      "time": "2/23 - 2/26",
       "links": ["https://corporate.publix.com/"],
       "location": "Orlando, FL",
-      "logo": "Publix_Retail_Logo.png",
+      "logo": "/jobs/publix_super_markets_logo.jpg",
       "bullets": [
         "Processing customer transactions efficiently while providing great service.",
         "Able to adapt easily to changes in working condition/customer inflow.",
