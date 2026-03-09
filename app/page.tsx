@@ -168,8 +168,9 @@ export default function Home() {
               </p>
             </section>
           </section>
+          <div id="experience" className="-mb-10" />
           <section className="flex flex-col gap-10 p-8 py-6 w-full sticky -top-3 z-20 card-shadow bg-white">
-            <BlockHeader id="experience" sideNum="02" className="">
+            <BlockHeader sideNum="02" className="">
               Experience
             </BlockHeader>
           </section>
@@ -239,8 +240,9 @@ export default function Home() {
               </div>
             );
           })}
+          <div id="projects" className="-mb-10" />
           <section className="flex flex-col gap-10 p-8 w-full py-6 sticky -top-3 z-20 card-shadow bg-white">
-            <BlockHeader id="projects" sideNum="03" className="">
+            <BlockHeader sideNum="03" className="">
               Projects
             </BlockHeader>
           </section>
@@ -367,8 +369,7 @@ export default function Home() {
       </main>
       <footer className="w-full bg-neutral-700 flex items-center justify-center relative text-white">
         <div className="w-5xl py-8 pb-16 font-interference flex flex-col gap-4">
-          <div className="text-2xl">LUKE CULLEN</div>
-          <div className="text-sm font-mono flex flex-row w-full gap-4">
+          <div className="text-sm font-mono flex flex-row w-full gap-8">
             <a
               className="hover:underline flex flex-row w-fit gap-2"
               target="_blank"
@@ -401,6 +402,13 @@ export default function Home() {
               <FileText />
               <div className="my-auto">Resume</div>
             </a>
+          </div>
+          <hr className="border-neutral-500" />
+          <div className="text-2xl flex flex-row w-full justify-between">
+            <div className="my-auto">LUKE CULLEN_</div>
+            <div className="text-neutral-300 text-sm font-mono my-auto">
+              © 2026 Luke Cullen. All rights reserved.
+            </div>
           </div>
         </div>
         <div className="absolute footer-overlay w-full h-full pointer-events-none" />
