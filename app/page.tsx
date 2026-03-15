@@ -76,13 +76,13 @@ export default function Home() {
           >
             <div
               role="presentation"
-              className="absolute top-4 left-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
+              className="absolute top-4 left-4 lg:left-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
             >
               ~LUKE.....
             </div>
             <div
               role="presentation"
-              className="absolute bottom-4 right-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
+              className="absolute bottom-4 right-4 lg:right-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
             >
               ....CULLEN~
             </div>
