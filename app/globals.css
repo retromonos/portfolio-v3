@@ -73,6 +73,32 @@
     box-shadow: -12px 10px 0px #222222;
 }
 
+@media (width < 40rem) {
+   .sm-card-shadow {
+        box-shadow: -6px 5px 0px #222222;
+    } 
+
+    .card-shadow {
+        box-shadow: -10px 8px 0px #63208b;
+    }
+
+    .t3-card-shadow {
+        box-shadow: -6px 5px 0px var(--color-lime-700);
+    }
+
+    .t-card-shadow {
+        box-shadow: -6px 5px 0px var(--color-lime-950);
+    }
+
+    .t2-card-shadow {
+        box-shadow: -6px 5px 0px var(--color-purple-950);
+    }
+
+    .xs2-card-shadow {
+        box-shadow: -3px 3px 0px var(--color-purple-950);
+    }
+}
+
 .test {
     background: rgb(171, 222, 88);
     background-image: radial-gradient(rgb(134, 168, 78) 1.25px, transparent 0);

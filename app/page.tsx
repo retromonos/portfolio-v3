@@ -4,13 +4,16 @@ import BlockHeader from "./components/header";
 import { projects } from "./json/projects.json";
 import { jobs } from "./json/experience.json";
 import {
+  Briefcase,
   FileText,
   GithubIcon,
   Globe,
+  HomeIcon,
   ImageIcon,
   LinkedinIcon,
   Mail,
   Map,
+  Wrench,
 } from "lucide-react";
 import GalleryModal from "./components/gallerymodal";
 import {
@@ -25,35 +28,38 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen items-center justify-center test">
       <main
-        className="relative pb-32 flex text-black min-h-screen w-full max-w-4xl
+        className="relative pb-16 lg:pb-32 flex text-neutral-800 min-h-screen w-full max-w-4xl
         flex-col bg-transparent"
       >
-        <div className="fixed bg-neutral-800 t3-card-shadow right-0 sm:right-auto -mr-8 p-3 max-w-40 sm:max-w-4xl w-fit self-end top-4 flex flex-col sm:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
+        <div className="fixed bg-neutral-800 t3-card-shadow right-10 lg:right-auto -mr-8 p-3 max-w-40 lg:max-w-4xl w-fit self-end top-2 lg:top-4 flex flex-col lg:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
           <Image
             alt="Logo"
             src={"/logotype.png"}
             width={32}
             height={32}
             style={{ imageRendering: "pixelated" }}
-            className="pr-2 w-10 border-r-2 border-r-lime-300"
+            className="lg:pr-2 w-10 mx-auto lg:mx-0 lg:border-r-2 border-r-lime-300"
           ></Image>
           <a
             href="#home"
-            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-black"
+            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
           >
-            HOME
+            <div className="hidden lg:block">HOME</div>
+            <HomeIcon className="block lg:hidden"/>
           </a>
           <a
             href="#experience"
-            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-black"
+            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
           >
-            EXPERIENCE
+            <div className="hidden lg:block">EXPERIENCE</div>
+            <Briefcase className="block lg:hidden"/>
           </a>
           <a
             href="#projects"
-            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-black"
+            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
           >
-            PROJECTS
+            <div className="hidden lg:block">PROJECTS</div>
+            <Wrench className="block lg:hidden"/>
           </a>
         </div>
         <Marquee
@@ -63,20 +69,20 @@ export default function Home() {
         >
           !!!UNDER_CONSTRUCTION!!!...
         </Marquee>
-        <section id="home" className="relative h-108 flex flex-row w-full">
+        <section id="home" className="relative h-108 flex flex-row max-w-4xl ">
           <h1
             aria-label="Luke Cullen"
             className="relative h-full w-36 z-10 font-bold bg-neutral-800"
           >
             <div
               role="presentation"
-              className="absolute top-4 left-4 sm:left-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
+              className="absolute top-4 left-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
             >
               ~LUKE.....
             </div>
             <div
               role="presentation"
-              className="absolute bottom-4 right-4 sm:right-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
+              className="absolute bottom-4 right-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
             >
               ....CULLEN~
             </div>
@@ -149,7 +155,7 @@ export default function Home() {
             <BlockHeader sideNum="01" className="">
               Hello!
             </BlockHeader>
-            <section className="font-shapiro font-normal text-lg/7 tracking-normal">
+            <section className="font-shapiro font-normal text-base/7 lg:text-lg/7 tracking-normal">
               <p className="">
                 I&apos;m <span className="font-bold">Luke Cullen</span>, a
                 Computer Science Major at the University of Central Florida,
@@ -169,7 +175,7 @@ export default function Home() {
             </section>
           </section>
           <div id="experience" className="-mb-10" />
-          <section className="flex flex-col gap-10 p-8 py-6 w-full sticky -top-3 z-20 card-shadow bg-white">
+          <section className="flex flex-col gap-10 p-4 lg:p-8 lg:py-6 w-66 lg:w-full sticky top-2 lg:-top-3 z-20 card-shadow bg-white">
             <BlockHeader sideNum="02" className="">
               Experience
             </BlockHeader>
@@ -178,41 +184,43 @@ export default function Home() {
             return (
               <div
                 key={"jobs" + i}
-                className={`flex ${i % 2 == 0 ? "flex-row-reverse" : "flex-row"} gap-8 w-full`}
+                className={`flex flex-col ${i % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 w-full mt-0 lg:mt-8`}
               >
-                <div className="flex flex-col gap-4 mt-0">
+                <div className="flex flex-row lg:flex-col gap-4 mt-0 mx-auto">
                   <Image
                     alt={v.title + " logo"}
                     src={v.logo}
                     width={196}
                     height={196}
-                    className="t2-card-shadow hover:scale-103 duration-100 border-purple-800"
+                    className="t2-card-shadow hover:scale-103 size-28 my-auto lg:size-[196px] duration-100 border-purple-800"
                   />
-                  <div className="w-full h-fit bg-purple-800 text-white hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center">
-                    {v.time}
-                  </div>
-                  <div className="flex flex-row justify-center hover:scale-103 duration-100 gap-2 w-full h-fit bg-purple-800 text-white p-2 sm-card-shadow font-interference text-center">
-                    <Map className="size-6 my-auto" />
-                    {v.location}
-                  </div>
-                  <a
-                    href={v.links[0]}
-                    className="relative flex flex-row justify-center gap-2 w-full h-fit underline-offset-4 border-4 border-purple-800 text-white bg-purple-950 hover:bg-purple-900 hover:underline hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center"
-                  >
-                    <div className="absolute button-overlay w-full h-full top-0" />
-                    <Globe className="size-6 my-auto" />
-                    Learn More
+                  <div className="flex flex-col gap-2 lg:gap-4">
+                    <div className="w-full h-fit bg-purple-800 text-white hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center">
+                      {v.time}
+                    </div>
+                    <div className="flex flex-row justify-center hover:scale-103 duration-100 gap-2 w-full h-fit bg-purple-800 text-white p-2 sm-card-shadow font-interference text-center">
+                      <Map className="size-6 my-auto" />
+                      {v.location}
+                    </div>
+                    <a
+                      href={v.links[0]}
+                      className="relative flex flex-row justify-center gap-2 w-full h-fit underline-offset-4 border-4 border-purple-800 text-white bg-purple-950 hover:bg-purple-900 hover:underline hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center"
+                    >
+                      <div className="absolute button-overlay w-full h-full top-0" />
+                      <Globe className="size-6 my-auto" />
+                      Learn More
                   </a>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-4 mt-8">
+                <div className="flex flex-col gap-0 mt-2 lg:mt-8 mx-auto">
                   <div
-                    className={`flex flex-col ${i % 2 == 0 ? "self-start" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-lime-950 sm-card-shadow font-mono text-white`}
+                    className={`flex flex-col ${i % 2 == 0 ? "self-start" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-[90vw] lg:max-w-2xl bg-lime-950 sm-card-shadow font-mono text-white`}
                   >
                     <div
-                      className={`absolute ${i % 2 == 1 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
+                      className={`absolute ${i % 2 == 1 ? "self-end -mr-3 lg:-mr-6" : "self-start  -ml-3 lg:-ml-12"} w-fit  -mt-4 z-10`}
                     >
                       <div
-                        className={` bg-lime-700 w-fit font-interference py-2.5 p-4 ${i % 2 == 1 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-lime-600  text-2xl`}
+                        className={` bg-lime-700 w-fit font-interference py-2.5 p-4 ${i % 2 == 1 ? "lg:pr-8 border-r-12" : "lg:pl-8 border-l-12"} border-lime-600  text-2xl`}
                       >
                         {v.name.toUpperCase()}
                       </div>
@@ -241,7 +249,7 @@ export default function Home() {
             );
           })}
           <div id="projects" className="-mb-10" />
-          <section className="flex flex-col gap-10 p-8 w-full py-6 sticky -top-3 z-20 card-shadow bg-white">
+          <section className="flex flex-col gap-10 p-4 lg:p-8 lg:py-6 w-66 lg:w-full sticky top-2 lg:-top-3 z-20 card-shadow bg-white">
             <BlockHeader sideNum="03" className="">
               Projects
             </BlockHeader>
@@ -250,37 +258,39 @@ export default function Home() {
             return (
               <div
                 key={"projects" + i}
-                className={`flex ${i % 2 == 0 ? "flex-row-reverse" : "flex-row"} gap-8 w-full`}
+                className={`flex flex-col ${i % 2 == 0 ? "lg:flex-row-reverse" : "lg:flex-row"} -mt-8 lg:mt-0 gap-0 lg:gap-8 w-full`}
               >
-                <div className="flex flex-col gap-4 mt-8">
+                <div className="flex flex-row lg:flex-col gap-4 mt-8 mx-auto">
                   <Image
                     src={v.images[0]}
                     width={196}
                     height={196}
                     alt={v.name + " logo"}
-                    className="bg-black t-card-shadow hover:scale-103 duration-100 border-lime-800"
+                    className="bg-black t-card-shadow size-26 lg:size-[196px] my-auto hover:scale-103 duration-100 border-lime-800"
                   />
-                  <div className="w-full h-fit bg-lime-800 text-white hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center">
-                    {v.time}
+                  <div className="flex flex-col gap-4">
+                    <div className="w-full h-fit bg-lime-800 text-white hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center">
+                      {v.time}
+                    </div>
+                    <a
+                      href={v.link}
+                      className="relative flex flex-row justify-center gap-2 w-full h-fit underline-offset-4 border-4 border-lime-800 text-white bg-lime-950 hover:bg-lime-900 hover:underline hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center"
+                    >
+                      <div className="absolute button-overlay w-full h-full top-0" />
+                      <Globe className="size-6 my-auto" />
+                      Learn More
+                    </a>
                   </div>
-                  <a
-                    href={v.link}
-                    className="relative flex flex-row justify-center gap-2 w-full h-fit underline-offset-4 border-4 border-lime-800 text-white bg-lime-950 hover:bg-lime-900 hover:underline hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center"
-                  >
-                    <div className="absolute button-overlay w-full h-full top-0" />
-                    <Globe className="size-6 my-auto" />
-                    Learn More
-                  </a>
                 </div>
-                <div className="flex flex-col gap-4 mt-8">
+                <div className="flex flex-col gap-4 mt-2 lg:mt-8">
                   <div
-                    className={`flex flex-col mt-8 ${i % 2 == 0 ? "self-start" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full max-w-2xl bg-blue-950 sm-card-shadow font-mono text-white`}
+                    className={`flex flex-col mt-8 ${i % 2 == 0 ? "self-start" : "self-start"} transition-transform duration-300 hover:scale-103 gap-2 w-full mx-auto max-w-[90vw] lg:max-w-2xl bg-blue-950 sm-card-shadow font-mono text-white`}
                   >
                     <div
-                      className={`absolute ${i % 2 == 1 ? "self-end -mr-6" : "self-start -ml-12"} w-fit  -mt-4 z-10`}
+                      className={`absolute ${i % 2 == 1 ? "self-end -mr-3 lg:-mr-6" : "self-start -ml-3 lg:-ml-12"} w-fit  -mt-4 z-10`}
                     >
                       <div
-                        className={` bg-purple-700 w-fit font-interference py-2.5 p-4 ${i % 2 == 1 ? "pr-8 border-r-12" : "pl-8 border-l-12"} border-purple-600  text-2xl`}
+                        className={` bg-purple-700 w-fit font-interference py-2.5 p-4 ${i % 2 == 1 ? "lg:pr-8 border-r-12" : "lg:pl-8 border-l-12"} border-purple-600  text-2xl`}
                       >
                         {v.name.toUpperCase()}
                       </div>
@@ -304,7 +314,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div className="w-full max-w-[90vw] mx-auto lg:max-w-3xl">
                     <GalleryModal title={v.name}>
                       <div className="h-full flex flex-col justify-between">
                         <Marquee
@@ -368,39 +378,39 @@ export default function Home() {
         </div>
       </main>
       <footer className="w-full bg-neutral-700 flex items-center justify-center relative text-white">
-        <div className="w-5xl py-8 pb-16 font-interference flex flex-col gap-4">
+        <div className="w-full max-w-[90vw] lg:max-w-5xl py-8 pb-16 font-interference flex flex-col gap-4">
           <div className="text-sm font-mono flex flex-row w-full gap-8">
             <a
               className="hover:underline flex flex-row w-fit gap-2"
               target="_blank"
               href="mailto:lukeculleninc@gmail.com"
             >
-              <Mail />
-              <div className="my-auto">lukeculleninc@gmail.com</div>
+              <Mail className="lg:size-4 my-auto"/>
+              <div className="my-auto hidden lg:block">lukeculleninc@gmail.com</div>
             </a>
             <a
               className="hover:underline flex flex-row w-fit gap-2"
               target="_blank"
               href="https://github.com/retromonos/"
             >
-              <GithubIcon />
-              <div className="my-auto">GitHub</div>
+              <GithubIcon className="lg:size-4 my-auto"/>
+              <div className="my-auto hidden lg:block">GitHub</div>
             </a>
             <a
               className="hover:underline flex flex-row w-fit gap-2"
               target="_blank"
               href="https://www.linkedin.com/in/luke-cullen-319701305/"
             >
-              <LinkedinIcon />
-              <div className="my-auto">LinkedIn</div>
+              <LinkedinIcon className="lg:size-4 my-auto"/>
+              <div className="my-auto hidden lg:block">LinkedIn</div>
             </a>
             <a
               className="hover:underline flex flex-row w-fit gap-2"
               target="_blank"
               href="/LukeCullen_Resume2_26.pdf"
             >
-              <FileText />
-              <div className="my-auto">Resume</div>
+              <FileText className="lg:size-4 my-auto"/>
+              <div className="my-auto hidden lg:block">Resume</div>
             </a>
           </div>
           <hr className="border-neutral-500" />
