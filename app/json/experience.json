@@ -10,9 +10,9 @@
       "location": "Orlando, FL",
       "logo": "/jobs/techrangers.webp",
       "bullets": [
-        "Deployed an open-source Flask tool for processing quiz accessibility requests on AWS EC2 servers, after rewriting 41 unit tests and refactoring the app to use Docker, as well as the latest LTI 1.3 standard, resolving over a dozen open GitHub issues.",
-        "QA tested and rewrote numerous widget components from PhP to Django in a team-wide port of our flagship product, Materia, which offers 25+ educational widgets to gamify and enhance a student’s learning experience.",
-        "Developing methods and marketing pitches to increase adoption of our tools across the University."
+        "Contributed to a major update for our gamified learning suite, <b>Materia</b>, by implementing <b>responsive design standards</b> into core system pages and <b>5</b> individual games within the product, including the use of React and AngularJS.",
+        "Working with our <b>UI/UX</b> team to implement <b>Figma</b> designs for 2 of our most popular games, rewriting the majority of the code to utilize <b>modern design standards</b> and <b>implement mobile support.</b>",
+        "Deployed an open-source Flask tool for processing quiz accessibility requests on <b>AWS EC2</b> servers, after rewriting <b>41</b> unit tests and refactoring the app to use <b>Docker</b>, as well as the latest LTI 1.3 standard, resolving <b>over a dozen</b> open GitHub issues."
       ],
       "skills": [
         "Teamwork",
@@ -27,15 +27,15 @@
       "name": "Knight Hacks",
       "title": "Hackathon Organizer, Developer",
       "rarity": "Legendary",
-      "description": "Knight Hacks is a UCF RSO for software development, with the goal of empowering students to improve their technical skills and gain real experience. I helped organize the most recent hackathon, Knight Hacks VIII, which attained 900+ participants and 90% positive ratings. I also currently work as a part of our development team, resposible for our member/hacker management infrastructure, Blade, which achieved a peak of about 850 concurrent users during the event.",
+      "description": "Knight Hacks is a UCF RSO for software development, with the goal of empowering students to improve their technical skills and gain real experience.<br/>I helped organize the most recent hackathon, Knight Hacks VIII, which attained 900+ participants and 90% positive ratings. I also currently work as a part of our development team, resposible for our member/hacker management infrastructure, Blade, which achieved a peak of about 850 concurrent users during the event.",
       "time": "7/25 - Present",
       "links": ["https://club.knighthacks.org/"],
       "location": "Orlando, FL",
       "logo": "/jobs/knighthacks.jpg",
       "bullets": [
-        "Authored attendance tracking systems and an accompanying management interface in React and tRPC/Node, storing valuable metrics for 60 workshop/sponsor events and 6,400+ check-in instances throughout the weekend while implementing rapid hot-fixes.",
-        "Designed new interfaces for hacker-facing dashboards and leaderboards to drive engagement, as well as enhancing the staff-side check-in interface to allow high volumes of check-ins.",
-        "Crafted React Email templates seen by 1,000+ applicants, communicating acceptance status in manner respectful to users."
+        "Authored <b>attendance tracking systems</b> and an accompanying management interface in <b>React, Tailwind, and tRPC/Node</b>, storing valuable metrics for <b>60</b> workshop/sponsor events and <b>6,400+</b> check-in instances throughout the weekend while implementing <b>rapid hot-fixes.</b>",
+        "Created a <b>permission management system</b> for Blade, which syncs roles with our Discord community to allow for <b>improved onboarding</b> of new team members and <b>heightened security</b> for our hackathon operations.",
+        "Designed new interfaces for hacker-facing dashboards and leaderboards to <b>drive event engagement</b>, as well as enhancing the staff-side check-in interface to allow <b>higher volumes of check-ins.</b>"
       ],
       "skills": [
         "Leadership",
@@ -50,16 +50,16 @@
       "name": "DenTraceX",
       "title": "Lead Developer, Vice President",
       "rarity": "Rare",
-      "description": "DenTraceX is a Florida non-profit organization dedicated to collecting dental records of missing persons, in order to cross-reference them with unidentified remains. My main role as Lead Developer is the implementation of the entire organization's tech stack, such as our database, security, and client-facing webpages. While we are not active yet, we are targeting a launch by September 2025.",
+      "description": "DenTraceX is a Florida non-profit organization dedicated to collecting dental records of missing persons, in order to cross-reference them with unidentified remains. My main role as Lead Developer is the implementation of the entire organization's tech stack, such as our database, security, and client-facing webpages. Our site is currently experiencing difficulties, but as we are volunteers it will be up as soon as we have time.",
       "time": "5/25 - Present",
       "links": ["https://www.instagram.com/dentracex/"],
       "location": "Orlando, FL",
       "logo": "/jobs/dentracex.jpg",
       "bullets": [
-        "Co-founded a non-profit organization dedicated to collecting dental records of missing persons, in order to cross-reference them with unidentified remains.",
-        "Authored our organization infrastructure entirely from scratch using React, ExpressJS/Node, PostgreSQL, as well as our own self-hosted AWS-compatible S3 bucket storage solution.",
-        "Constructed a novel code-based representation for jaw/tooth records, allowing easy searching/filtering to identify real-world human remains, intended for use by medical examiners and independent investigators.",
-        "Working with a team of diverse disciplines to process and handle sensitive medical information and maintain legal compliance."
+        "<b>Co-founded a non-profit organization</b> dedicated to collecting dental records of missing persons, in order to cross-reference them with unidentified remains.",
+        "Authored our organization infrastructure <b>entirely from scratch</b> using <b>React/Tailwind, ExpressJS/Node, PostgreSQL,</b> as well as our own self-hosted <b>AWS-compatible S3 bucket</b> storage solution.",
+        "Constructed a <b>novel</b> code-based representation for jaw/tooth records, allowing easy searching/filtering to identify <b>real-world</b> human remains, intended for use by <b>medical examiners</b> and <b>independent investigators.</b>",
+        "Working with a team of <b>diverse disciplines</b> to process and handle sensitive medical information and maintain legal compliance."
       ],
       "skills": [
         "Project Management",
@@ -73,7 +73,7 @@
       "name": "Publix Super Markets",
       "title": "Cashier",
       "rarity": "Uncommon",
-      "description": "Working as a Cashier, I interact with hundreds of customers a day, making sure that their needs are met and that they are truly happy to shop at Publix. As my first job, it's where I built much of my soft skills and self-accountability.",
+      "description": "Working as a Cashier, I interacted with hundreds of customers a day, making sure that their needs are met and that they are truly happy to shop at Publix. As my first job, it's where I built much of my soft skills and self-accountability.",
       "time": "2/23 - 2/26",
       "links": ["https://corporate.publix.com/"],
       "location": "Orlando, FL",

@@ -192,7 +192,7 @@ export default function Home() {
                     src={v.logo}
                     width={196}
                     height={196}
-                    className="t2-card-shadow hover:scale-103 size-28 my-auto lg:size-[196px] duration-100 border-purple-800"
+                    className="t2-card-shadow hover:scale-103 size-28 my-auto lg:my-2 lg:size-[196px] duration-100 border-purple-800"
                   />
                   <div className="flex flex-col gap-2 lg:gap-4">
                     <div className="w-full h-fit bg-purple-800 text-white hover:scale-103 duration-100 p-2 sm-card-shadow font-interference text-center">
@@ -239,9 +239,12 @@ export default function Home() {
                       <div className="font-interference text-xl border-b-lime-800 border-b-2 w-fit pb-1">
                         {v.title}
                       </div>
-                      <div className="font-shapiro font-normal tracking-normal">
-                        {v.description}
-                      </div>
+                      <div className="font-shapiro font-normal tracking-normal border-b-lime-800 border-b-2 pb-2" dangerouslySetInnerHTML={{__html: v.description}}/>
+                      <ul className="font-shapiro font-normal tracking-wide text-sm/6 list-disc pl-4 flex flex-col gap-2">
+                        {v.bullets.map((b,j) => {
+                          return<li key={`job_${i}_b_${j}`} className="" dangerouslySetInnerHTML={{__html:b}}/>
+                        })}
+                      </ul>
                     </div>
                   </div>
                 </div>
