@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "name": "ReStory",
+      "time": "SwampHacks XI",
+      "link": "https://devpost.com/software/restory",
+      "prize": ["1st Place Overall"],
+      "description": "Utilizes wearable technology, machine learning, and LLMs to serve as an effective memory aid for Alzheimers patients. The wearable scans the users surroundings and isolates face/voice pairings per person, storing their conversations and personal history in a convenient web-app on the user's phone. The app will then recall a particular person's background to the user the next time it recognizes their face.",
+      "rarity": "Uncommon",
+      "role": "Front-end Lead",
+      "tools": [
+        "Python",
+        "React",
+        "TypeScript",
+        "WhisperX",
+        "ArcFace",
+        "Google Gemini"
+      ],
+      "images": ["/projects/restory_logo.jpg", "/projects/restory1.jpg", "/projects/restory2.jpg", "/projects/restory3.jpg", "/projects/restory4.jpg"]
+    },
+    {
       "name": "VL-ADK",
       "time": "ShellHacks 2025",
       "link": "https://www.youtube.com/watch?v=0t4X0DoKbsc",

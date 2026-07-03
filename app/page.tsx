@@ -159,8 +159,8 @@ export default function Home() {
               <p className="">
                 I&apos;m <span className="font-bold">Luke Cullen</span>, a
                 Computer Science Major at the University of Central Florida,
-                minoring in Data Science. I&apos;m currently a Web Developer
-                Intern at the CDL Techrangers, as well as a Hackathon Organizer
+                minoring in Data Science. I&apos;m currently a <a className="underline" href="https://techrangers.cdl.ucf.edu/">
+                Techranger</a> at the UCF Center for Distributed Learning, as well as a formner Hackathon Organizer
                 for UCF&apos;s premier SWE club, Knight Hacks.
               </p>
               <br />
