@@ -62,14 +62,15 @@ export default function Home() {
             <Wrench className="block lg:hidden"/>
           </a>
         </div>
-        <Marquee
-          autoFill={true}
-          direction="right"
-          className="h-8 z-20 w-full bg-neutral-800 font-mono tracking-wider text-yellow-300 p-2"
-        >
-          !!!UNDER_CONSTRUCTION!!!...
-        </Marquee>
-        <section id="home" className="relative h-108 flex flex-row max-w-4xl ">
+        <div className="w-full z-20 h-10 my-4 flex flex-row gap-1 overflow-hidden font-shapiro">
+          <div className="bg-neutral-800 tracking-wider text-yellow-300 p-2 w-fit border-l-yellow-300 border-l-8">
+            UNDER CONSTRUCTION!
+          </div>
+          <div className="bg-neutral-700 h-10 w-12" aria-hidden></div>
+          <div className="bg-neutral-600 h-10 w-8" aria-hidden></div>
+          <div className="bg-neutral-500 h-10 w-4" aria-hidden></div>
+        </div>
+        <section id="home" className="relative h-108 flex flex-row max-w-4xl overflow-hidden">
           <h1
             aria-label="Luke Cullen"
             className="relative h-full w-36 z-10 font-bold bg-neutral-800"
@@ -144,12 +145,26 @@ export default function Home() {
             className="absolute w-full h-full hero-overlay z-5 top-0 pointer-events-none"
           ></div>
         </section>
-        <Marquee
+        {/* <Marquee
           autoFill={true}
           className="h-8 w-full bg-neutral-700 font-mono tracking-wider text-white p-2"
         >
           ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
-        </Marquee>
+        </Marquee> */}
+        <div className="w-full z-20 h-10 my-4 flex flex-row gap-1 overflow-hidden font-shapiro">
+          <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit border-l-purple-700 border-l-8">
+            Software Engineer
+          </div>
+          <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
+            Full-Stack
+          </div>
+          <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
+            Front-end
+          </div>
+          <div className="bg-neutral-700 h-10 w-12" aria-hidden></div>
+          <div className="bg-neutral-600 h-10 w-8" aria-hidden></div>
+          <div className="bg-neutral-500 h-10 w-4" aria-hidden></div>
+        </div>
         <div className="gap-12 flex flex-col relative">
           <section className="mt-12 flex flex-col gap-10 p-8 py-6 bg-white card-shadow">
             <BlockHeader sideNum="01" className="">
@@ -180,6 +195,7 @@ export default function Home() {
               Experience
             </BlockHeader>
           </section>
+
           {jobs.map((v, i) => {
             return (
               <div
@@ -257,6 +273,7 @@ export default function Home() {
               Projects
             </BlockHeader>
           </section>
+
           {projects.map((v, i) => {
             return (
               <div
@@ -378,6 +395,7 @@ export default function Home() {
               </div>
             );
           })}
+          
         </div>
       </main>
       <footer className="w-full bg-neutral-700 flex items-center justify-center relative text-white">
