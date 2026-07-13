@@ -26,12 +26,70 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center test">
+    <div className="flex flex-col min-h-screen items-center justify-center test main-overlay relative">
+      {/* <div className="fixed main-overlay w-[100vw] h-[100vh] z-5 top-0 pointer-events-none"></div> */}
+      <section id="home" className="w-full h-80 bg-neutral-900 border-b-4 border-b-neutral-600 relative overflow-hidden z-10">
+        <div className="hero-overlay h-full pointer-events-none absolute w-full top-0"></div>
+        <div className="max-w-4xl w-full mx-auto h-full flex relative p-2 md:p-0">
+          <div  className="relative flex flex-col card-shadow w-fit mt-auto mb-12 md:my-auto z-50 bg-neutral-700 p-2 md:p-0 md:bg-transparent mx-auto lg:mx-0">
+            <h1 className="font-interference h-full text-3xl lg:text-5xl name-stroke bg-neutral-800 text-lime-300 text-center w-full md:w-fit py-2 pb-1 px-2 md:px-4 md:outline-8 match-outline">
+              Luke Cullen
+            </h1>
+            <div className="w-fit max-w-full z-20 h-fit mt-1 md:mt-2 flex flex-row justify-center flex-wrap gap-1 overflow-hidden font-mono md:outline-8 match-bg match-outline">
+              <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit">
+                SOFTWARE ENGINEER
+              </div>
+              <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
+                FULL-STACK
+              </div>
+              <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
+                FRONT-END
+              </div>
+              <a
+                className="hover:underline p-2 bg-neutral-900 transition-colors duration-200 border-4 border-transparent hover:border-purple-900 hover:bg-purple-950 flex relative"
+                target="_blank"
+                href="mailto:lukeculleninc@gmail.com"
+                aria-label="Link to Email: lukeculleninc@gmail.com"
+              >
+                <div className="w-full h-full absolute top-0 left-0 button-overlay"></div>
+                <Mail className="size-4 my-auto text-purple-300"/>
+              </a>
+              <a
+                className="hover:underline p-2 bg-neutral-900 transition-colors duration-200 border-4 border-transparent hover:border-purple-900 hover:bg-purple-950 flex relative"
+                target="_blank"
+                href="https://github.com/retromonos/"
+                aria-label="Link to GitHub"
+              >
+                <div className="w-full h-full absolute top-0 left-0 button-overlay"></div>
+                <GithubIcon className="size-4 my-auto text-purple-300"/>
+              </a>
+              <a
+                className="hover:underline p-2 bg-neutral-900 transition-colors duration-200 border-4 border-transparent hover:border-purple-900 hover:bg-purple-950 flex relative"
+                target="_blank"
+                href="https://www.linkedin.com/in/luke-cullen-319701305/"
+                aria-label="Link to LinkedIn"
+              >
+                <div className="w-full h-full absolute top-0 left-0 button-overlay"></div>
+                <LinkedinIcon className="size-4 my-auto text-purple-300"/>
+              </a>
+              <a
+                className="hover:underline p-2 bg-neutral-900 transition-colors duration-200 border-4 border-transparent hover:border-purple-900 hover:bg-purple-950 flex relative"
+                target="_blank"
+                href="/LukeCullen_Resume_Master.pdf"
+                aria-label="Link to Resume"
+              >
+                <div className="w-full h-full absolute top-0 left-0 button-overlay"></div>
+                <FileText className="size-4 my-auto text-purple-300"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <main
         className="relative pb-16 lg:pb-32 flex text-neutral-800 min-h-screen w-full max-w-4xl
         flex-col bg-transparent"
       >
-        <div className="fixed bg-neutral-800 t3-card-shadow right-10 lg:right-auto -mr-8 p-3 max-w-40 lg:max-w-4xl w-fit self-end top-2 lg:top-4 flex flex-col lg:flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
+        <div className="fixed bg-neutral-800 t3-card-shadow right-10 lg:right-auto -mr-8 p-3 max-w-60 lg:max-w-4xl w-fit self-end top-2 lg:top-4 flex flex-row gap-2 justify-end z-50 text-lime-300 font-interference">
           <Image
             alt="Logo"
             src={"/logotype.png"}
@@ -42,133 +100,30 @@ export default function Home() {
           ></Image>
           <a
             href="#home"
-            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
+            className="cursor-pointer px-2 py-1 align-middle h-fit my-auto border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
           >
             <div className="hidden lg:block">HOME</div>
             <HomeIcon className="block lg:hidden"/>
           </a>
           <a
             href="#experience"
-            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
+            className="cursor-pointer px-2 py-1 align-middle h-fi my-auto border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
           >
             <div className="hidden lg:block">EXPERIENCE</div>
             <Briefcase className="block lg:hidden"/>
           </a>
           <a
             href="#projects"
-            className="cursor-pointer px-2 py-1 align-middle h-fit border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
+            className="cursor-pointer px-2 py-1 align-middle h-fit my-auto border-2 border-lime-300 hover:bg-lime-300 hover:text-neutral-800"
           >
             <div className="hidden lg:block">PROJECTS</div>
             <Wrench className="block lg:hidden"/>
           </a>
         </div>
-        <div className="w-full z-20 h-10 my-4 flex flex-row gap-1 overflow-hidden font-shapiro">
-          <div className="bg-neutral-800 tracking-wider text-yellow-300 p-2 w-fit border-l-yellow-300 border-l-8">
-            UNDER CONSTRUCTION!
-          </div>
-          <div className="bg-neutral-700 h-10 w-12" aria-hidden></div>
-          <div className="bg-neutral-600 h-10 w-8" aria-hidden></div>
-          <div className="bg-neutral-500 h-10 w-4" aria-hidden></div>
-        </div>
-        <section id="home" className="relative h-108 flex flex-row max-w-4xl overflow-hidden">
-          <h1
-            aria-label="Luke Cullen"
-            className="relative h-full w-36 z-10 font-bold bg-neutral-800"
-          >
-            <div
-              role="presentation"
-              className="absolute top-4 left-4 lg:left-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
-            >
-              ~LUKE.....
-            </div>
-            <div
-              role="presentation"
-              className="absolute bottom-4 right-4 lg:right-8 w-4 h-fit text-lime-300 text-3xl text-center wrap-break-word font-interference"
-            >
-              ....CULLEN~
-            </div>
-          </h1>
-          <div role="presentation" className="flex flex-row w-full">
-            <div role="presentation" className="w-36 h-full relative">
-              <Image
-                src={"/media/ShellHacks1.webp"}
-                alt="ShellHacks 2024 cup stacking photo"
-                width={776}
-                height={828}
-                className="h-full object-cover object-[15%]"
-              />
-              <div className="absolute bg-purple-900/40 z-20 w-full h-full top-0" />
-            </div>
-            <div role="presentation" className="flex flex-col w-full h-full">
-              <div role="presentation" className="w-full h-[60%] relative">
-                <Image
-                  src={"/media/DSC_0911.webp"}
-                  alt="ShellHacks 2025 photo with Knight Hacks"
-                  width={1500}
-                  height={1000}
-                  className="-mt-12"
-                />
-                <div className="absolute bg-lime-900/40 z-20 w-full h-full top-0" />
-              </div>
-              <div className="h-[40%] w-full flex flex-row">
-                <div
-                  role="presentation"
-                  className="w-fit h-full relative z-5 overflow-hidden"
-                >
-                  <Image
-                    src={"/media/swamp_group.webp"}
-                    alt="SwampHacks XII photo with Knight Hacks"
-                    width={2048}
-                    height={1536}
-                    className="h-64 w-fit -mt-12"
-                  />
-                  <div className="absolute bg-purple-900/40 z-20 w-full h-full top-0" />
-                </div>
-                <div
-                  role="presentation"
-                  className="w-fit h-full relative z-5 overflow-hidden"
-                >
-                  <Image
-                    src={"/media/swamp_stage.webp"}
-                    alt="SwampHacks XII on stage for winning 1st"
-                    width={1224}
-                    height={919}
-                    className="h-64 w-fit -mt-12"
-                  />
-                  <div className="absolute bg-purple-900/40 z-20 w-full h-full top-0" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            role="presentation"
-            className="absolute w-full h-full hero-overlay z-5 top-0 pointer-events-none"
-          ></div>
-        </section>
-        {/* <Marquee
-          autoFill={true}
-          className="h-8 w-full bg-neutral-700 font-mono tracking-wider text-white p-2"
-        >
-          ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
-        </Marquee> */}
-        <div className="w-full z-20 h-10 my-4 flex flex-row gap-1 overflow-hidden font-shapiro">
-          <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit border-l-purple-700 border-l-8">
-            Software Engineer
-          </div>
-          <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
-            Full-Stack
-          </div>
-          <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
-            Front-end
-          </div>
-          <div className="bg-neutral-700 h-10 w-12" aria-hidden></div>
-          <div className="bg-neutral-600 h-10 w-8" aria-hidden></div>
-          <div className="bg-neutral-500 h-10 w-4" aria-hidden></div>
-        </div>
         <div className="gap-12 flex flex-col relative">
           <section className="mt-12 flex flex-col gap-10 p-8 py-6 bg-white card-shadow">
             <BlockHeader sideNum="01" className="">
-              Hello!
+              <div className="my-auto">HELLO!</div>
             </BlockHeader>
             <section className="font-shapiro font-normal text-base/7 lg:text-lg/7 tracking-normal">
               <p className="">
@@ -190,9 +145,9 @@ export default function Home() {
             </section>
           </section>
           <div id="experience" className="-mb-10" />
-          <section className="flex flex-col gap-10 p-4 lg:p-8 lg:py-6 w-66 lg:w-full sticky top-2 lg:-top-3 z-20 card-shadow bg-white">
+          <section className="flex flex-row gap-10 p-4 lg:p-8 lg:py-6 w-66 lg:w-full lg:sticky top-2 lg:-top-3 z-20 card-shadow bg-white">
             <BlockHeader sideNum="02" className="">
-              Experience
+              <div className="my-auto">EXPERIENCE</div>
             </BlockHeader>
           </section>
 
@@ -242,25 +197,22 @@ export default function Home() {
                       </div>
                       <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
                     </div>
-                    <Marquee
-                      className="bg-lime-800"
-                      direction={i % 2 == 0 ? "right" : "left"}
-                      autoFill={true}
-                    >
-                      <div aria-label={"Skills: " + v.skills.join(",")}>
-                        {v.skills.join("...").toUpperCase() + "..."}
-                      </div>
-                    </Marquee>
+                    <div className="h-6 bg-lime-800 w-full"></div>
                     <div className="p-4 w-full text-base flex flex-col gap-2">
                       <div className="font-interference text-xl border-b-lime-800 border-b-2 w-fit pb-1">
                         {v.title}
                       </div>
-                      <div className="font-shapiro font-normal tracking-normal border-b-lime-800 border-b-2 pb-2" dangerouslySetInnerHTML={{__html: v.description}}/>
-                      <ul className="font-shapiro font-normal tracking-wide text-sm/6 list-disc pl-4 flex flex-col gap-2">
+                      <div className="font-shapiro font-normal tracking-normal border-b-lime-800 border-dotted border-b-2 pb-2" dangerouslySetInnerHTML={{__html: v.description}}/>
+                      <ul className="font-shapiro font-normal tracking-wide text-sm/6 list-disc pl-4 flex flex-col gap-2 border-b-lime-800 border-dotted border-b-2 pb-2">
                         {v.bullets.map((b,j) => {
                           return<li key={`job_${i}_b_${j}`} className="" dangerouslySetInnerHTML={{__html:b}}/>
                         })}
                       </ul>
+                      <div className="flex flex-row flex-wrap gap-2 w-full" aria-label="Skills Section:">
+                        {v.skills.map((s,si) => (<div key={`skill_p${i}_s${si}`} className="uppercase bg-neutral-900 p-1 px-2 border-lime-800">
+                          {s}
+                        </div>))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -268,9 +220,9 @@ export default function Home() {
             );
           })}
           <div id="projects" className="-mb-10" />
-          <section className="flex flex-col gap-10 p-4 lg:p-8 lg:py-6 w-66 lg:w-full sticky top-2 lg:-top-3 z-20 card-shadow bg-white">
+          <section className="flex flex-col gap-10 p-4 lg:p-8 lg:py-6 w-66 lg:w-full lg:sticky top-2 lg:-top-3 z-20 card-shadow bg-white">
             <BlockHeader sideNum="03" className="">
-              Projects
+              <div className="my-auto">PROJECTS</div>
             </BlockHeader>
           </section>
 
@@ -316,15 +268,7 @@ export default function Home() {
                       </div>
                       <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
                     </div>
-                    <Marquee
-                      className="bg-purple-800"
-                      direction={i % 2 == 0 ? "right" : "left"}
-                      autoFill={true}
-                    >
-                      <div aria-label={"Skills: " + v.tools.join(",")}>
-                        {v.tools.join("...").toUpperCase() + "..."}
-                      </div>
-                    </Marquee>
+                    <div className="h-6 bg-purple-800 w-full"></div>
                     <div className="p-4 w-full text-base flex flex-col gap-2">
                       <div className="font-interference text-xl border-b-purple-800 border-b-2 w-fit pb-1">
                         {v.role}
@@ -334,18 +278,10 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full max-w-[90vw] mx-auto lg:max-w-3xl">
+                  {/* <div className="w-full max-w-[90vw] mx-auto lg:max-w-3xl relative z-200"> */}
                     <GalleryModal title={v.name}>
                       <div className="h-full flex flex-col justify-between">
-                        <Marquee
-                          className="bg-purple-800 font-mono"
-                          direction={"right"}
-                          autoFill={true}
-                        >
-                          <div aria-label={"Skills: " + v.tools.join(",")}>
-                            {v.tools.join("...").toUpperCase() + "..."}
-                          </div>
-                        </Marquee>
+                        <div className="h-6 bg-purple-800 w-full"></div>
                         <div className="flex flex-col w-full h-full relative overflow-scroll pb-8">
                           <div className="mt-10 relative">
                             <div className="absolute top-0 left-0 w-full h-90 button-overlay" />
@@ -379,18 +315,10 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <Marquee
-                          className="bg-purple-800 font-mono"
-                          direction={"left"}
-                          autoFill={true}
-                        >
-                          <div aria-label={"Skills: " + v.tools.join(",")}>
-                            {v.tools.join("...").toUpperCase() + "..."}
-                          </div>
-                        </Marquee>
+                        <div className="h-6 bg-purple-800 w-full"></div>
                       </div>
                     </GalleryModal>
-                  </div>
+                  {/* </div> */}
                 </div>
               </div>
             );
@@ -438,11 +366,11 @@ export default function Home() {
           <div className="text-2xl flex flex-row w-full justify-between">
             <div className="my-auto">LUKE CULLEN_</div>
             <div className="text-neutral-300 text-sm font-mono my-auto">
-              © 2026 Luke Cullen. All rights reserved.
+              © {new Date().getFullYear()} Luke Cullen. All rights reserved.
             </div>
           </div>
         </div>
-        <div className="absolute footer-overlay w-full h-full pointer-events-none" />
+        <div className="absolute footer-overlay w-full h-full top-0 pointer-events-none z-10" />
       </footer>
     </div>
   );
