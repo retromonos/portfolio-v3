@@ -273,8 +273,13 @@ export default function Home() {
                       <div className="font-interference text-xl border-b-purple-800 border-b-2 w-fit pb-1">
                         {v.role}
                       </div>
-                      <div className="font-shapiro font-normal tracking-normal">
+                      <div className="font-shapiro font-normal tracking-normal border-b-purple-800 border-b-2 border-dotted pb-2">
                         {v.description}
+                      </div>
+                      <div className="flex flex-row flex-wrap gap-2 w-full" aria-label="Tools Section:">
+                        {v.tools.map((s,si) => (<div key={`tool_p${i}_s${si}`} className="uppercase bg-neutral-900 p-1 px-2 border-lime-800">
+                          {s}
+                        </div>))}
                       </div>
                     </div>
                   </div>
