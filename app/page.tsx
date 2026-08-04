@@ -361,7 +361,7 @@ export default function Home() {
             <a
               className="hover:underline flex flex-row w-fit gap-2"
               target="_blank"
-              href="/LukeCullen_Resume2_26.pdf"
+              href="/LukeCullen_Resume_Master.pdf"
             >
               <FileText className="lg:size-4 my-auto"/>
               <div className="my-auto hidden lg:block">Resume</div>
