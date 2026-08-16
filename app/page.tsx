@@ -130,7 +130,7 @@ export default function Home() {
                 I&apos;m <span className="font-bold">Luke Cullen</span>, a
                 Computer Science Major at the University of Central Florida,
                 minoring in Data Science. I&apos;m currently a <a className="underline" href="https://techrangers.cdl.ucf.edu/">
-                Techranger</a> at the UCF Center for Distributed Learning, as well as a formner Hackathon Organizer
+                Techranger</a> at the UCF Center for Distributed Learning, as well as a former Hackathon Organizer
                 for UCF&apos;s premier SWE club, Knight Hacks.
               </p>
               <br />
