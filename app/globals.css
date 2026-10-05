@@ -267,3 +267,21 @@
         @apply font-sans;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .stop-animations {
+    * {
+        animation-play-state: paused; 
+        /* OR completely remove it if you prefer static text: */
+        animation: none;
+        transition: none;
+
+        &:hover {
+            scale: 1 !important;
+        }
+    }
+    .rfm-marquee-container div {
+        animation-play-state: paused;
+    }
+  }
+}

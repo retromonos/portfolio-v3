@@ -2,10 +2,32 @@
   "jobs": [
     {
       "name": "UCF CDL",
-      "title": "Techranger",
+      "title": "Applications Programmer I",
       "rarity": "Exotic",
       "description": "Currently developing web software as a part of the Center for Distributed Learning, a team inside UCF which develops open-source educational software used by 100+ institutions and tens of thousands of students worldwide.",
-      "time": "10/25 - Present",
+      "time": "9/26 - Present",
+      "links": ["https://cdl.ucf.edu/"],
+      "location": "Orlando, FL",
+      "logo": "/jobs/ucf_logo_new.jpg",
+      "bullets": [
+        "Refactored <b>LitJS</b> data dashboard components to reduce redundancy, shrinking codebase by <b>4,500</b> lines.",
+        "Rewriting an advisory data service to use the <b>LTI 1.3</b> standard on <b>AWS Lambda</b>, preventing deprecation."
+      ],
+      "skills": [
+        "Teamwork",
+        "Initiative",
+        "Marketing",
+        "Client Relations",
+        "Idea Development",
+        "Adaptability"
+      ]
+    },
+    {
+      "name": "UCF CDL",
+      "title": "Web Developer Intern",
+      "rarity": "Exotic",
+      "description": "",
+      "time": "10/25 - 9/26",
       "links": ["https://techrangers.cdl.ucf.edu/"],
       "location": "Orlando, FL",
       "logo": "/jobs/techrangers.webp",

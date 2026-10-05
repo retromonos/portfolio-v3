@@ -26,9 +26,9 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center test main-overlay relative">
+    <div className="flex flex-col min-h-screen items-center justify-center test main-overlay relative stop-animations">
       {/* <div className="fixed main-overlay w-[100vw] h-[100vh] z-5 top-0 pointer-events-none"></div> */}
-      <section id="home" className="w-full h-80 bg-neutral-900 border-b-4 border-b-neutral-600 relative overflow-hidden z-10">
+      <section id="home" className="w-full h-80 bg-neutral-900 relative overflow-hidden z-10">
         <div className="hero-overlay h-full pointer-events-none absolute w-full top-0"></div>
         <div className="max-w-4xl w-full mx-auto h-full flex relative p-2 md:p-0">
           <div  className="relative flex flex-col card-shadow w-fit mt-auto mb-12 md:my-auto z-50 bg-neutral-700 p-2 md:p-0 md:bg-transparent mx-auto lg:mx-0">
@@ -81,9 +81,18 @@ export default function Home() {
                 <div className="w-full h-full absolute top-0 left-0 button-overlay"></div>
                 <FileText className="size-4 my-auto text-purple-300"/>
               </a>
+              
             </div>
+            
           </div>
         </div>
+        <Marquee
+          autoFill={true}
+          pauseOnHover={true}
+          className="h-8 w-full bg-neutral-700 font-mono tracking-wider text-white p-2 z-200 absolute bottom-8 left-0"
+        >
+          ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
+        </Marquee>
       </section>
       <main
         className="relative pb-16 lg:pb-32 flex text-neutral-800 min-h-screen w-full max-w-4xl
@@ -197,7 +206,16 @@ export default function Home() {
                       </div>
                       <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
                     </div>
-                    <div className="h-6 bg-lime-800 w-full"></div>
+                    <Marquee
+                        className="bg-lime-800"
+                        direction={i % 2 == 0 ? "left" : "right"}
+                        autoFill={true}
+                      >
+                        <div aria-label={"Skills: " + v.skills.join(",")}>
+                          {v.skills.join("...").toUpperCase() + "..."}
+                        </div>
+                      </Marquee>
+                    {/* <div className="h-6 bg-lime-800 w-full"></div> */}
                     <div className="p-4 w-full text-base flex flex-col gap-2">
                       <div className="font-interference text-xl border-b-lime-800 border-b-2 w-fit pb-1">
                         {v.title}
@@ -208,12 +226,22 @@ export default function Home() {
                           return<li key={`job_${i}_b_${j}`} className="" dangerouslySetInnerHTML={{__html:b}}/>
                         })}
                       </ul>
-                      <div className="flex flex-row flex-wrap gap-2 w-full" aria-label="Skills Section:">
+
+                      {/* <div className="flex flex-row flex-wrap gap-2 w-full" aria-label="Skills Section:">
                         {v.skills.map((s,si) => (<div key={`skill_p${i}_s${si}`} className="uppercase bg-neutral-900 p-1 px-2 border-lime-800">
                           {s}
                         </div>))}
-                      </div>
+                      </div> */}
                     </div>
+                    <Marquee
+                        className="bg-lime-800"
+                        direction={i % 2 == 0 ? "right" : "left"}
+                        autoFill={true}
+                      >
+                        <div aria-label={"Skills: " + v.skills.join(",")}>
+                          {v.skills.join("...").toUpperCase() + "..."}
+                        </div>
+                      </Marquee>
                   </div>
                 </div>
               </div>
@@ -268,7 +296,15 @@ export default function Home() {
                       </div>
                       <div className="hero-overlay absolute w-full h-full top-0 left-0 pointer-events-none" />
                     </div>
-                    <div className="h-6 bg-purple-800 w-full"></div>
+                    <Marquee
+                      className="bg-purple-800"
+                      direction={i % 2 == 0 ? "right" : "left"}
+                      autoFill={true}
+                    >
+                      <div aria-label={"Skills: " + v.tools.join(",")}>
+                        {v.tools.join("...").toUpperCase() + "..."}
+                      </div>
+                    </Marquee>
                     <div className="p-4 w-full text-base flex flex-col gap-2">
                       <div className="font-interference text-xl border-b-purple-800 border-b-2 w-fit pb-1">
                         {v.role}
@@ -276,11 +312,11 @@ export default function Home() {
                       <div className="font-shapiro font-normal tracking-normal border-b-purple-800 border-b-2 border-dotted pb-2">
                         {v.description}
                       </div>
-                      <div className="flex flex-row flex-wrap gap-2 w-full" aria-label="Tools Section:">
+                      {/* <div className="flex flex-row flex-wrap gap-2 w-full" aria-label="Tools Section:">
                         {v.tools.map((s,si) => (<div key={`tool_p${i}_s${si}`} className="uppercase bg-neutral-900 p-1 px-2 border-lime-800">
                           {s}
                         </div>))}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   {/* <div className="w-full max-w-[90vw] mx-auto lg:max-w-3xl relative z-200"> */}
