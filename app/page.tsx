@@ -32,19 +32,17 @@ export default function Home() {
         <div className="hero-overlay h-full pointer-events-none absolute w-full top-0"></div>
         <div className="max-w-4xl w-full mx-auto h-full flex relative p-2 md:p-0">
           <div  className="relative flex flex-col card-shadow w-fit mt-auto mb-12 md:my-auto z-50 bg-neutral-700 p-2 md:p-0 md:bg-transparent mx-auto lg:mx-0">
-            <h1 className="font-interference h-full text-3xl lg:text-5xl name-stroke bg-neutral-800 text-lime-300 text-center w-full md:w-fit py-2 pb-1 px-2 md:px-4 md:outline-8 match-outline">
-              Luke Cullen
-            </h1>
-            <div className="w-fit max-w-full z-20 h-fit mt-1 md:mt-2 flex flex-row justify-center flex-wrap gap-1 overflow-hidden font-mono md:outline-8 match-bg match-outline">
+            
+            <div className="w-fit max-w-full z-20 h-fit mb-1 md:mb-2 flex flex-row justify-center flex-wrap gap-1 overflow-hidden font-mono md:outline-8 match-bg match-outline">
               <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit">
-                SOFTWARE ENGINEER
+                CONTACT ME
               </div>
-              <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
+              {/* <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
                 FULL-STACK
               </div>
               <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
                 FRONT-END
-              </div>
+              </div> */}
               <a
                 className="hover:underline p-2 bg-neutral-900 transition-colors duration-200 border-4 border-transparent hover:border-purple-900 hover:bg-purple-950 flex relative"
                 target="_blank"
@@ -83,7 +81,9 @@ export default function Home() {
               </a>
               
             </div>
-            
+            <h1 className="font-interference h-full text-3xl lg:text-5xl name-stroke bg-neutral-800 text-lime-300 text-center w-full md:w-fit py-2 pb-1 px-2 md:px-4 md:outline-8 match-outline">
+              Luke Cullen
+            </h1>
           </div>
         </div>
         <Marquee
@@ -91,7 +91,7 @@ export default function Home() {
           pauseOnHover={true}
           className="h-8 w-full bg-neutral-700 font-mono tracking-wider text-white p-2 z-200 absolute bottom-8 left-0"
         >
-          ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER::::
+          ASSERT//&nbsp;SOFTWARE_ENGINEER..FULLSTACK_DEVELOPER..FRONT_END_DESIGNER::::
         </Marquee>
       </section>
       <main
