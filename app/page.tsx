@@ -37,12 +37,6 @@ export default function Home() {
               <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit">
                 CONTACT ME
               </div>
-              {/* <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
-                FULL-STACK
-              </div>
-              <div className="bg-neutral-800 tracking-wider text-purple-300 p-2 w-fit ">
-                FRONT-END
-              </div> */}
               <a
                 className="hover:underline p-2 bg-neutral-900 transition-colors duration-200 border-4 border-transparent hover:border-purple-900 hover:bg-purple-950 flex relative"
                 target="_blank"
@@ -137,9 +131,8 @@ export default function Home() {
             <section className="font-shapiro font-normal text-base/7 lg:text-lg/7 tracking-normal">
               <p className="">
                 I&apos;m <span className="font-bold">Luke Cullen</span>, a
-                Computer Science Major at the University of Central Florida,
-                minoring in Data Science. I&apos;m currently a <a className="underline" href="https://techrangers.cdl.ucf.edu/">
-                Techranger</a> at the UCF Center for Distributed Learning, as well as a former Hackathon Organizer
+                Computer Science Major at the University of Central Florida, and an <a className="underline" href="https://cdl.ucf.edu/">
+                Applications Programmer I</a> at the UCF Center for Distributed Learning, I was also a former Hackathon Organizer
                 for UCF&apos;s premier SWE club, Knight Hacks.
               </p>
               <br />
@@ -220,8 +213,10 @@ export default function Home() {
                       <div className="font-interference text-xl border-b-lime-800 border-b-2 w-fit pb-1">
                         {v.title}
                       </div>
-                      <div className="font-shapiro font-normal tracking-normal border-b-lime-800 border-dotted border-b-2 pb-2" dangerouslySetInnerHTML={{__html: v.description}}/>
-                      <ul className="font-shapiro font-normal tracking-wide text-sm/6 list-disc pl-4 flex flex-col gap-2 border-b-lime-800 border-dotted border-b-2 pb-2">
+                      {v.description != "" && (
+                        <div className="font-shapiro font-normal tracking-normal border-b-lime-800 border-dotted border-b-2 pb-2" dangerouslySetInnerHTML={{__html: v.description}}/>
+                      )}
+                      <ul className="font-shapiro font-normal tracking-wide text-sm/6 list-disc pl-4 flex flex-col gap-2 pb-2">
                         {v.bullets.map((b,j) => {
                           return<li key={`job_${i}_b_${j}`} className="" dangerouslySetInnerHTML={{__html:b}}/>
                         })}
