@@ -124,8 +124,8 @@ export default function Home() {
           </a>
         </div>
         <div className="gap-12 flex flex-col relative">
-          <a className="px-2 absolute top-3 opacity-0 focus:opacity-100 font-interference bg-neutral-800 text-white" href="/accessibility_demo.html">
-            Accessibility Demo
+          <a className="px-2 absolute top-3 opacity-100 md:opacity-0 focus:opacity-100 font-interference bg-neutral-800 text-white" href="/accessibility_demo.html">
+            → Accessibility Demo
           </a>
           <section className="mt-12 flex flex-col gap-10 p-8 py-6 bg-white card-shadow">
             <BlockHeader sideNum="01" className="">
