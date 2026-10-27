@@ -1,0 +1,558 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Accessibility Workshop</title>
+    </head>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgb(157, 143, 172);
+            margin: 0;
+            position: relative;
+        }
+        article, nav, footer {
+            max-width: 800px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            background-color: white;
+            padding: 1rem 1.5rem;
+
+            p {
+                line-height: 1.5rem;
+            }
+        }
+        article {
+            a {
+                margin-bottom: 8px;
+                color: rgb(144, 85, 168);
+                &:active {
+                    color: rgb(125, 70, 146)
+                }
+            }
+        }
+        footer {
+            background-color: rgb(47, 47, 47);
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            a {
+                display: block;
+                color: white;
+                text-align: right;
+                line-height: 1.5rem;
+                margin: 1rem 0;
+                &:active {
+                    color: rgb(238, 194, 255);
+                }
+            }
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgb(144, 85, 168);
+            a {
+                color: white;
+                margin-right: 1rem;
+                &:active {
+                    color: rgb(238, 194, 255);
+                }
+            }
+        }
+        label {
+            color: rgb(144, 85, 168);
+        }
+        .input-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            
+            width: fit-content;
+
+            input[type=color] {
+                margin-left: 0.35rem;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                border: 2px solid rgb(144, 85, 168);
+                border-radius: 4px;
+                /* background-color: rgba(144, 85, 168, 0.25); */
+            }
+
+            &.center {
+                justify-content: center;
+            }
+        }
+        aside, blockquote {
+            border-left: 2px solid rgb(144, 85, 168);
+            padding-left: 1rem;
+
+            em {
+                color: rgb(53, 53, 53);
+            }
+        }
+
+        blockquote {
+            background-color: rgb(243, 243, 243);
+            padding: 0.5rem;
+
+            a {
+                display: block;
+                margin-top: 0.65rem;
+                margin-bottom: 0.2rem;
+            }
+        }
+
+        .widget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        summary {
+            user-select: none;
+            cursor: pointer;
+
+            span {
+                margin-left: 0.25rem;
+            }
+        }
+        details {
+            code {
+                margin: 1rem 0;
+            }
+            &:open summary {
+                margin-bottom: 0.5rem;
+            }
+        }
+        dialog, :popover-open {
+            border: 2px solid rgb(144, 85, 168);
+            border-radius: 8px;
+
+            a {
+                display: block;
+                margin-bottom: 8px;
+                color: rgb(144, 85, 168);
+                &:active {
+                    color: rgb(125, 70, 146)
+                }
+            }
+
+            &:popover-open {
+                padding: 0.75rem;
+            }
+        }
+        button {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border: none;
+            border-radius: 4px;
+            background-color: rgb(144, 85, 168);
+            color: white;
+            padding: 4px 8px;
+            cursor: pointer;
+
+            &:hover, &:focus-visible {
+                background-color: rgb(113, 60, 134);
+            }
+
+            
+        }
+
+        button[aria-selected="true"] {
+            font-weight: bold;
+        }
+
+        .key {
+            background-color: rgb(144, 85, 168);
+            color: white;
+            font-family: monospace;
+            padding: 0.25rem;
+            border-radius: 4px;
+        }
+
+        ul li {
+            margin-bottom: 4px;
+            color: rgb(53, 53, 53);
+            line-height: 1.5rem;
+        }
+
+        /* .talllist li {
+            margin-bottom: 0.5rem;
+
+            ul li {
+                margin-top: 0.5rem;
+            }
+        } */
+
+        .tabs {
+            button {
+                border-radius: 4px 4px 0 0;
+            }
+
+            .tab-panels div {
+                border: 1px solid rgb(144, 85, 168);
+                border-radius: 0 4px 4px 4px;
+                background-color: white;
+                padding: 0.25rem;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    </style>
+    <body>
+        <nav>
+            <a href="#top">Top</a>
+            <a href="#widgets">Widgets</a>
+            <a href="#aria">ARIA</a>
+            <a href="#why">Why?</a>
+        </nav>
+        <article>
+            <section>
+                <h1 id="home">Accessibility Demo</h1>
+                <hr/>
+                <p>
+                    This entire demo page is, for the most part, pure HTML.
+                    All of the content uses appropriate semantic tags to my best ability, and all of the widgets are using native elements, unless stated otherwise.
+                </p>
+                <p>My goal is to show how powerful—and accessible—using HTML elements can be.</p>
+            </section>
+            <section id="screenreader">
+                <h2>Using your Screen Reader</h2>
+                <p>
+                    To get the full experience from this demo, you will likely need to know how to use a screen reader. 
+                    For our purposes we will be using <em>VoiceOver,</em> which is the included screen reader for macOS.
+                </p>
+                <p>
+                    To open VoiceOver, press <span class="key">Command</span> + <span class="key">F5</span>.
+                </p>
+                <img src="./figures/voiceover_preview.png" alt="Example image of a VoiceOver overlay, with text reading: 'You are currently on a button. To click this button, press Control-Option-Space.'"/>
+                <p>You will now see the VoiceOver overlay, which will begin reading your current focused content.</p>
+                <p>VoiceOver commands use a special <em>VO key,</em> which by default is:</p>
+                <ul class="talllist">
+                    <li><span class="key">Control</span> + <span class="key">Option</span></li>
+                    <li><span class="key">Caps Lock</span></li>
+                </ul>
+                <p>A full list of controls are avaliable on 
+                    <a aria-label="Full list of VoiceOver controls" href="https://support.apple.com/guide/voiceover/intro-to-voiceover-commands-and-gestures-vo14111/10/mac/27" target="_blank">
+                        Apple's website,
+                    </a> but only a few will be necessary for this demo.
+                </p>
+                <ul class="talllist">
+                    <li><span class="key">VO</span> + <span class="key">Arrow Keys</span> moves your focus to the next immediate element in that direction.</li>
+                    <li><span class="key">VO</span> + <span class="key">Shift</span> + ( <span class="key">←</span> / <span class="key">→</span> ) moves your focus to the next element in the same depth.</li>
+                    <li><span class="key">VO</span> + <span class="key">Shift</span> + ( <span class="key">↑</span> / <span class="key">↓</span> ) moves your focus up or down a level of depth.</li>
+                    <li>
+                        <span class="key">VO</span> + <span class="key">U</span> opens the Rotor, allowing you to navigate to key elements.
+                        <ul class="talllist">
+                            <li>By default, this shows links, but you can use <span class="key">←</span> / <span class="key">→</span> to view page headers, etc.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    If you have not already, turn on VoiceOver before proceeding with the rest of the demo. 
+                    Take note of how it interacts with not just the widgets, but the standard page content as well.
+                    Sound is not necessary, but may help you understand how real users interact with this system.
+                </p>
+            </section>
+            <section id="widgets">
+                <h2>Native Widgets</h2>
+                <p>One of the main benefits to utilizing native HTML widgets is the inherent navigation support.</p>
+                <p>When making your own bespoke widgets using JavaScript, such as a dialog box or a calendar picker, you have to implement all of the alternate input handling yourself: <i>i.e.</i> handling arrow keys incrementing an input, or tabbing through the current year.</p>
+                <p>With just HTML, however, you can have functional, accessible interfaces without having to do any work.</p>
+                <p id="datetime-aside" aria-hidden="true">
+                    <em>Try selecting a date with your keyboard!</em>
+                </p>
+                <aside aria-labelledby="datetime-aside" class="input-col">
+                    <label for="datetime-a"><b>Date and Time</b></label>
+                    <input id="datetime-a" type="datetime-local">
+                    <code><small aria-label="Related HTML tag">&lt;input type="datetime-local"&gt;</small></code>
+                </aside>
+                <p>Most mainstream browsers have <strong>robust</strong> support for native HTML widgets such as these. While they may not be the prettiest, they are <em>incredibly functional.</em> And sometimes, that is all you need.</p>
+                <h3>Other Widgets</h3>
+                <p>These are just <em>some</em> native widgets that satisfy common needs for web developers.</p>
+                <div class="widget-grid" aria-label="Grid of demonstration HTML widgets">
+                    <aside aria-label="Demonstration color picker" class="input-col center">
+                        <div>
+                            <label for="color-picker"><b>Color Picker</b></label>
+                            <input id="color-picker" type="color">
+                        </div>
+                        <div>
+                            <code><small aria-label="Related HTML tag">&lt;input type="color"&gt;</small></code>
+                        </div>
+                    </aside>
+                    <aside aria-label="Demonstration detail dropdown" class="input-col">
+                        <label for="details-a"><b>Detail Dropdown</b></label>
+                        <details id="details-a">
+                            <summary>
+                                <span>See the code!</span>
+                            </summary>
+                            <code>
+                                <small aria-label="Related HTML tag">
+                                    &lt;details&gt;<br/>
+                                    &emsp;&lt;summary&gt;See the code!&lt;/summary&gt;<br/>
+                                    &emsp;Detail content here...<br/>
+                                    &lt;/details&gt;
+                                </small>
+                            </code>
+                        </details>
+                    </aside>
+                    <aside aria-label="Demonstration dialog" class="input-col">
+                        <label><b>Dialog</b></label>
+                        <button command="show-modal" commandfor="my-dialog">Open dialog</button>
+
+                        <dialog id="my-dialog">
+                            <p>This dialog uses <em>no</em> JavaScript! You can close this by:</p>
+                            <ul aria-label="Dialog close directions">
+                                <li>Pressing the "Close" button</li>
+                                <li>Pressing the <span class="key">Escape</span> key</li>
+                            </ul>
+                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">Learn more about native dialogs</a>
+                            <button commandfor="my-dialog" command="close">Close</button>
+                        </dialog>
+                    </aside>
+                    <aside aria-label="Demonstration popover" class="input-col">
+                        <label><b>Popover</b></label>
+                        <button popovertarget="my-popover">Open popover</button>
+                        <div popover id="my-popover">
+                            <p>This popover also uses <em>no</em> JavaScript. You can close this by:</p>
+                            <ul aria-label="Popover close directions">
+                                <li>Pressing the <span class="key">Escape</span> key</li>
+                                <li>Clicking outside of the popover area</li>
+                            </ul>
+                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover">Learn more about native popovers</a>
+                        </div>
+                    </aside>
+                </div>
+                <p>
+                    Notice how all of these widgets were fully navigable and accessible, no matter if you were using your keyboard, your mouse, or even your phone.
+                    By using them you don't have to worry whether or not you missed a necessary accessibility feature, because it's all already handled.
+                </p>
+            </section>
+            <section id="aria">
+                <h2>ARIA Interactions</h2>
+                <p>
+                    <abbr title="Accessible Rich Internet Applications">ARIA</abbr> is a set of roles and attributes that interacts with assistive technologies to provide more context to the user.
+                    ARIA can label certain sections of an article, manage interactions with site widgets, help users fill out forms, etc.
+                </p>
+                <p>
+                    In most native HTML widgets (such as the ones you just saw) ARIA roles are implicit and handled by the browser.
+                    For example, the <code>&lt;dialog&gt;</code> widget has a native ARIA role of <code>"dialog"</code>, which tells accessibility tools how to properly interact with it.
+                </p>
+                <p>Apart from roles, ARIA also relies on attributes that communicate the current state of the element.</p>
+                <p>
+                    The detail dropdown doesn't have a unique role for being a dropdown. 
+                    Rather, it has a <code>summary</code> element with an implicit <code>"button"</code> role, which signals that it is interactable.
+                    The parent <code>details</code> element also implicitly uses <code>aria-expanded</code>, which is an attribute that tells accessibility tools whether or not an expandable element is open.
+                </p>
+                <aside>
+                    <details>
+                        <summary>This should say "collapsed"</summary>
+                        <em>Now it should say "expanded"!</em>
+                    </details>
+                </aside>
+                <h3>Setting your own roles and attributes</h3>
+                <blockquote><em>But what if I can't use an HTML widget?</em> </blockquote>
+                <p>
+                    Worry not! You can configure ARIA for your own custom widgets! 
+                    But before you do so, <em>be careful;</em> misconfigured ARIA can make the experience <strong>worse</strong> for users than just having done nothing.
+                </p>
+                <aside>
+                    <p>
+                        While creating this demo, I had misappropriately assigned the role, <code>"grid"</code>, to the grid containing example widgets.
+                        However, the grid role expects special controls for tables, and because I had not implemented those, I was unable to even <em>navigate</em> to a widget with my screen reader.
+                    </p>
+                </aside>
+                <p>
+                    The <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles" target="_blank">
+                        Mozilla Web Docs
+                    </a> (<abbr>MDN</abbr>) have more information about what roles to use when, but the majority of ARIA roles are intended to be used by native HTML widgets. 
+                    For example, if you need a button, don't make a <code>div</code> with role <code>"button"</code>; just use a <code>button</code> element.
+                </p>
+                <h4>Example: Tabs</h4>
+                <p>
+                    However, using ARIA is wonderful for more complex widget types that HTML does not implement. 
+                    For this example I will use a very common tab-panel widget, which separates content into active tabs.
+                </p>
+                <p>
+                    Try navigating through the content with just your keyboard and the text from the screen reader. 
+                    While focusing the tab-list, <span class="key">←</span> / <span class="key">→</span> will allow you to focus different tab triggers, and <span class="key">Enter</span> / <span class="key">Space</span> will select that tab.
+                </p>
+                <blockquote aria-label="Demonstration tab-panel widget">
+                    <div class="tabs">
+                        <div role="tablist" aria-label="Select your operating system">
+                            <button
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="panel-1"
+                            id="tab-1"
+                            tabindex="0">
+                            Windows
+                            </button>
+                            <button
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-2"
+                            id="tab-2"
+                            tabindex="-1">
+                            macOS
+                            </button>
+                            <button
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-3"
+                            id="tab-3"
+                            tabindex="-1">
+                            Linux
+                            </button>
+                        </div>
+                        <div class="tab-panels">
+                            <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+                                <p>How to run this application on Windows</p>
+                            </div>
+                            <div
+                            id="panel-2"
+                            role="tabpanel"
+                            tabindex="0"
+                            aria-labelledby="tab-2"
+                            hidden>
+                                <p>How to run this application on macOS</p>
+                            </div>
+                            <div
+                            id="panel-3"
+                            role="tabpanel"
+                            tabindex="0"
+                            aria-labelledby="tab-3"
+                            hidden>
+                                <p>How to run this application on Linux</p>
+                            </div>
+                        </div>
+                    </div>
+                    <cite><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role#example" target="_blank">Code from MDN Tab Example</a></cite>
+                </blockquote>
+                <p>
+                    Notice how your screen reader is fully aware of the tabs that are in this widget, what is selected, etc.
+                    This is thanks to this widget's extensive (and <strong>proper</strong>) use of ARIA roles and attributes.
+                </p>
+                <h5>Roles</h5>
+                <ul>
+                    <li>Each tab button is contained in an element with the role <code>"tablist"</code>, and those buttons each have the role, <code>"tab"</code>.</li>
+                    <li>
+                        The content is stored in a sibling element, which contains three elements of role <code>"tabpanel"</code>, each reflecting a specific tab's content.
+                        Per the role specification, only one panel is visible at a time.
+                    </li>
+                </ul>
+                <h5>Attributes</h5>
+                <ul>
+                    <li>A tab is tied to its tab-panel using the <code>aria-controls</code> attribute, and the tab-panel is described by its tab's label using <code>aria-labelledby</code>.</li>
+                    <li>
+                        A tab's selection state is controlled using <code>aria-selected</code>, which gets toggled by JavaScript based on the active tab.
+                    </li>
+                </ul>
+                <p>
+                    Something of note: just adding the ARIA roles and attributes does not make a widget accessible. 
+                    While important, ARIA is mainly there to communicate what the widget is to the screen reader in a standardized way.
+                    You must also write the code that implements the role's navigation specs, and sets the attributes. 
+                </p>
+                <aside>
+                    <p>More points for native HTML widgets: these already handle all of the navigation and attribute implementation on their own.</p>
+                </aside>
+            </section>
+            <section id="why">
+                <h2>But why do any of this?</h2>
+                <p>
+                    All of this sounds like a lot of extra work, and you may find yourself asking, <em>why is any of this important for me to do?</em>
+                    Most people reading this probably navigate the web using a mouse, and likely have full-enough vision to read content.
+                </p>
+                <p>
+                    Beyond being <em>legally required</em> if you are developing for a publically-funded organization, 
+                    making your interfaces accessible benefits the <strong>one billion</strong> people globally who are impacted by a disability.
+                    The userbase that can benefit from robust interfaces is not one to be scoffed at, and servicing them opens your application up to <em>so many more people.</em>
+                </p>
+                <p>
+                    Imagine that you are responsible for something like a petition platform, something that can carry real impact in the world.
+                    If there exists an entire subsection of users that cannot interact with your platform, then that is a large population whose voices do not get to be heard.
+                </p>
+                <p>
+                    While a narrow example, that reasoning can follow to any site, any part of the internet that can tangibly <em>benefit</em> from the inclusion of <strong>all users.</strong>
+                    It is our responsibility as developers and designers to sculpt an internet that fosters a community for everyone.
+                </p>
+            </section>
+        </article>
+        <footer>
+            <p><b>Thanks for reading!</b></p>
+            <a href="/">← back to lcullen.dev</a> 
+        </footer>
+        <script>
+            const tabsContainer = document.querySelector(".tabs");
+            const tabList = tabsContainer.querySelector(':scope > [role="tablist"]');
+            const tabs = Array.from(tabList.querySelectorAll(':scope > [role="tab"]'));
+            const tabPanelsContainer = tabsContainer.querySelector(":scope > .tab-panels");
+            const tabPanels = Array.from(
+                tabPanelsContainer.querySelectorAll(':scope > [role="tabpanel"]'),
+            );
+
+            tabList.addEventListener("keydown", (e) => {
+                const currentTab = e.target;
+                const currentIndex = tabs.indexOf(currentTab);
+                if (currentIndex === -1) return; // Exit if the focused element is not a tab
+                let newIndex = 0;
+
+                switch (e.key) {
+                    case "ArrowRight":
+                        newIndex = (currentIndex + 1) % tabs.length;
+                        break;
+                    case "ArrowLeft":
+                        newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+                        break;
+                    case "Home":
+                        newIndex = 0;
+                        break;
+                    case "End":
+                        newIndex = tabs.length - 1;
+                        break;
+                    default:
+                    return; // Exit if the key is not recognized
+                }
+
+                e.preventDefault();
+                e.stopPropagation();
+                tabs[newIndex].focus();
+            });
+
+            function showTab(targetTab) {
+                // Unselect other tabs and set this tab as selected
+                for (const tab of tabs) {
+                    if (tab === targetTab) continue;
+                    tab.setAttribute("aria-selected", false);
+                    tab.tabIndex = -1;
+                }
+                targetTab.setAttribute("aria-selected", true);
+                targetTab.tabIndex = 0;
+
+                // Hide other tab panels and show the selected panel
+                const targetTabPanel = document.getElementById(
+                    targetTab.getAttribute("aria-controls"),
+                );
+                for (const panel of tabPanels) {
+                    if (panel === targetTabPanel) continue;
+                    panel.hidden = true;
+                }
+                targetTabPanel.hidden = false;
+            }
+
+            tabs.forEach((tab) => {
+                tab.addEventListener("click", (e) => {
+                    showTab(e.target);
+                });
+                tab.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    showTab(e.target);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

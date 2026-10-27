@@ -124,6 +124,9 @@ export default function Home() {
           </a>
         </div>
         <div className="gap-12 flex flex-col relative">
+          <a className="px-2 absolute top-3 opacity-0 focus:opacity-100 font-interference bg-neutral-800 text-white" href="/accessibility_demo.html">
+            Accessibility Demo
+          </a>
           <section className="mt-12 flex flex-col gap-10 p-8 py-6 bg-white card-shadow">
             <BlockHeader sideNum="01" className="">
               <div className="my-auto">HELLO!</div>
@@ -203,6 +206,7 @@ export default function Home() {
                         className="bg-lime-800"
                         direction={i % 2 == 0 ? "left" : "right"}
                         autoFill={true}
+                        pauseOnHover={true}
                       >
                         <div aria-label={"Skills: " + v.skills.join(",")}>
                           {v.skills.join("...").toUpperCase() + "..."}
@@ -232,6 +236,7 @@ export default function Home() {
                         className="bg-lime-800"
                         direction={i % 2 == 0 ? "right" : "left"}
                         autoFill={true}
+                        pauseOnHover={true}
                       >
                         <div aria-label={"Skills: " + v.skills.join(",")}>
                           {v.skills.join("...").toUpperCase() + "..."}
@@ -295,6 +300,7 @@ export default function Home() {
                       className="bg-purple-800"
                       direction={i % 2 == 0 ? "right" : "left"}
                       autoFill={true}
+                      pauseOnHover={true}
                     >
                       <div aria-label={"Skills: " + v.tools.join(",")}>
                         {v.tools.join("...").toUpperCase() + "..."}
